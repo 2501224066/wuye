@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Navbar": "/components/navbar/navbar",
+    "OrderGoods": "/components/orderGoods/orderGoods"
+  }
+}

@@ -1,0 +1,26 @@
+<view class="repair">
+  <Navbar1 text="我的报修"></Navbar1>
+
+  <view class="content">
+    <!-- 列表 -->
+    <view class="list">
+      <view class="item shadow" wx:for="{{list}}" wx:key="index">
+        <view class="top">
+          <view class="time">{{item.time}}</view>
+          <view class="type type{{item.status}}">{{status[item.status]}}</view>
+        </view>
+        <view class="info">
+          <view class="title">
+            <view class="img">
+              <image src="{{type[item.type].img}}" mode="aspectFill"></image>
+            </view>
+            <view class="label">{{type[item.type].title}}</view>
+            <view class="price"><span>¥</span>{{item.price}}</view>
+          </view>
+          <view class="memo">{{item.memo}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

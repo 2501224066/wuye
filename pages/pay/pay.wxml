@@ -1,0 +1,61 @@
+<view class="pay">
+  <Navbar color="#fff" bgColor="#4763F4" text="缴费"></Navbar>
+
+  <!-- 广告图 -->
+  <view class="banner">
+    <image src="/images/t.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="content">
+    <!-- 公告 -->
+    <view class="notice">
+      <Notice list="{{notice}}"></Notice>
+    </view>
+
+    <!-- tab -->
+    <view class="tab">
+      <view class="item" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">
+        <view class="{{tabIndex == index ? 'sel' : ''}}">{{item}}</view>
+        <view class="line {{tabIndex == index ? 'blue' : ''}}"></view>
+      </view>
+    </view>
+
+    <!-- 待缴 -->
+    <view class="list shadow" wx:if="{{tabIndex == 0}}">
+      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to"
+        data-url="/pages/payDetail/payDetail?type={{item.type}}">
+        <view class="img">
+          <image src="{{item.type == 1 ? '/images/pay1.png' : '/images/pay2.png'}}" mode="aspectFill"></image>
+        </view>
+        <view class="center">
+          <view>{{item.title}}</view>
+          <view class="memo">{{item.time}}</view>
+        </view>
+        <view class="price" style="text-align: right">-<span>¥</span>{{item.price}}</view>
+        <view class="r">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 记录 -->
+    <view wx:else>
+      <view class="list shadow" wx:for="{{list2}}" wx:key="index">
+        <view class="label">{{item.time}}</view>
+        <view class="item" wx:for="{{item.arr}}" wx:key="index" wx:for-item="value">
+          <view class="img">
+            <image src="/images/dot.png" mode="aspectFill"></image>
+          </view>
+          <view class="center">
+            <view>{{value.title}}：</view>
+          </view>
+          <view class="price">-<span>¥</span>{{value.price}}</view>
+          <view class="r">
+            <image src="/images/right.png" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

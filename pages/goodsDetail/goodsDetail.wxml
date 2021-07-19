@@ -1,0 +1,84 @@
+<view class="goodsDetail">
+  <Navbar1 text="{{type[detail.type]}}"></Navbar1>
+
+  <view class="content">
+    <!-- 信息 -->
+    <view class="info shadow">
+      <!-- 轮播 -->
+      <swiper class="banner" autoplay="true" interval="3000" duration="500">
+        <swiper-item wx:for="{{detail.img}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
+        </swiper-item>
+      </swiper>
+
+      <view class="box">
+        <!-- 价格 -->
+        <view class="top">
+          <view class="unit">¥</view>
+          <view class="price">{{detail.price}}</view>
+          <view class="line">¥ {{detail.oldPrice}}</view>
+          <view class="img">
+            <image src="/images/share.png" mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="title">{{detail.title}}</view>
+        <view class="memo">{{detail.memo}}</view>
+      </view>
+    </view>
+
+    <!-- 选择 -->
+    <view class="type shadow" bindtap="skuModelShow">
+      <view class="label">选择</view>
+      <view class="text" wx:if="{{skuIndex != null}}">{{sku[skuIndex].title}}</view>
+      <view class="text" wx:else>服务类型</view>
+      <view class="img">
+        <image src="/images/right.png" mode="aspectFill"></image>
+      </view>
+    </view>
+
+    <!-- 详情图 -->
+    <view class="more shadows">
+      <view class="img" wx:for="{{detail.more}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 模态 -->
+<view class="model" wx:if="{{skuModelShow}}">
+  <view class="other" bindtap="skuModelShow"></view>
+  <view class="box">
+    <view class="close" bindtap="skuModelShow">
+      <image src="/images/close.png" mode="aspectFill"></image>
+    </view>
+    <view class="goods">
+      <view class="img">
+        <image wx:if="{{skuIndex != null}}" src="{{sku[skuIndex].img}}" mode="aspectFill"></image>
+        <image wx:else src="{{sku[0].img}}" mode="aspectFill"></image>
+      </view>
+      <view class="r">
+        <view class="price" wx:if="{{skuIndex != null}}"><span>¥</span>{{sku[skuIndex].price}}</view>
+        <view class="price" wx:else><span>¥</span>{{detail.price}}</view>
+        <view>{{detail.title}}</view>
+      </view>
+    </view>
+    <view class="title">服务类型</view>
+    <view class="list">
+      <view class="item {{skuIndex == index ? 'sel' : ''}}" wx:for="{{sku}}" wx:key="index" bindtap="checkoutSku"
+        data-index="{{index}}">
+        {{item.title}}
+      </view>
+    </view>
+    <view class="sub">确定</view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+  <view class="fbox">
+    <view class="btn" bindtap="skuModelShow">立即支付</view>
+  </view>
+</view>
+<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>

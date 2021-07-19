@@ -1,0 +1,98 @@
+.orderDetail {
+  position: relative;
+  padding-bottom: 14vh;
+}
+
+.bgCir {
+  margin-top: -80rpx;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 3vh 40rpx;
+  font-size: 38rpx;
+}
+
+.status>.img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.content {
+  padding: 0 40rpx;
+}
+
+.pay {
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.pay>.top {
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+}
+
+.pay>.top>.img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.pay>.price {
+  color: rgb(253, 51, 51);
+  font-size: 50rpx;
+  margin-top: 40rpx;
+}
+
+.pay>.price>span {
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.list>.item {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.item>.label {
+  color: #a8a8a8;
+}
+
+.list>.item>.text {
+  flex: 1;
+  margin-left: 50rpx;
+  text-align: right;
+}
+
+.list>.file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+}
+
+.list>.file>.block {
+  width: 140rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+}
+
+.list>.file>.temp {
+  width: 140rpx;
+  height: 0;
+}

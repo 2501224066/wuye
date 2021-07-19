@@ -1,0 +1,86 @@
+<view class="confirm">
+  <Navbar1 text="确认订单"></Navbar1>
+
+  <view class="content">
+    <!-- 无地址 -->
+    <view class="noAddress shadow">
+      <view class="img">
+        <image src="/images/address.png" mode="aspectFill"></image>
+      </view>
+      <view class="label">服务地址</view>
+      <view class="r">
+        <image src="/images/right.png" mode="aspectFill"></image>
+      </view>
+    </view>
+
+    <!-- 服务 -->
+    <view class="server">
+      <OrderGoods detail="{{goods}}"></OrderGoods>
+    </view>
+
+    <!-- 列表 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="img">
+          <image src="/images/confirm1.png" mode="aspectFill"></image>
+        </view>
+        <view class="label">预约时间</view>
+        <view class="ipt"></view>
+        <view class="r">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="item">
+        <view class="img">
+          <image src="/images/confirm2.png" mode="aspectFill"></image>
+        </view>
+        <view class="label">优惠信息</view>
+        <view class="ipt"></view>
+        <view class="r">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 备注 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">备注</view>
+        <view class="ipt">
+          <input type="text" placeholder="工具、偏好等要求" />
+        </view>
+        <view class="r">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 支付方式 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">支付方式</view>
+        <view class="ipt"></view>
+        <view class="r"></view>
+      </view>
+      <view class="item">
+        <view class="img">
+          <image src="/images/wx.png" mode="aspectFill"></image>
+        </view>
+        <view class="label">微信支付</view>
+        <view class="ipt"></view>
+        <view class="checkout">
+          <image src="/images/checkout.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+  <view class="fbox">
+    <view class="btn">立即支付</view>
+  </view>
+</view>
+<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>

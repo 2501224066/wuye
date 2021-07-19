@@ -1,0 +1,40 @@
+.contact {
+  position: relative;
+}
+
+.bgCir {
+  margin-top: -100rpx;
+}
+
+.content {
+  padding: 0 40rpx;
+  margin-top: 150rpx;
+}
+
+.phone {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.phone>.img {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.box {
+  margin-top: 40rpx;
+  padding: 60rpx 80rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 10rpx;
+  font-size: 34rpx;
+}
+
+.box>.qr {
+  width: 100%;
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,168 @@
+
+
+.goodsDetail {
+  padding-bottom: 12vh;
+}
+
+.content {
+  padding: 20rpx 40rpx;
+}
+
+.banner {
+  height: 350rpx;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.info {
+  background: #fff;
+  border-radius: 16rpx 16rpx;
+  overflow: hidden;
+}
+
+.info>.box {
+  padding: 0 40rpx;
+}
+
+.info>.box>.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 26rpx;
+  margin: 30rpx 0;
+}
+
+.info>.box>.top>.unit {
+  color: #f73131;
+  margin-right: 10rpx;
+}
+
+.info>.box>.top>.price {
+  font-size: 45rpx;
+  color: #f73131;
+  margin-bottom: -8rpx;
+}
+
+.info>.box>.top>.line {
+  flex: 1;
+  text-decoration: line-through;
+  margin: 0 40rpx;
+  color: #a8a8a8;
+}
+
+.info>.box>.top>.img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.info>.box>.title {
+  font-size: 35rpx;
+}
+
+.info>.box>.memo {
+  margin: 40rpx 0;
+  font-size: 26rpx;
+  color: #a8a8a8;
+}
+
+.type {
+  margin-top: 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx;
+}
+
+.type>.label {
+  color: #a8a8a8;
+}
+
+.type>.text {
+  flex: 1;
+  margin: 0 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.type>.img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.more {
+  margin-top: 10vh;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.more>.img {
+  width: 100%;
+  line-height: 0;
+}
+
+.model>.box>.goods {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #F8F8F8;
+  padding-bottom: 30rpx;
+}
+
+.model>.box>.goods>.img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.model>.box>.goods>.r {
+  height: 160rpx;
+  flex: 1;
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.model>.box>.goods>.r>.price {
+  color: #f73131;
+  font-size: 45rpx;
+}
+
+.model>.box>.goods>.r>.price>span {
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.model>.box>.title {
+  margin: 30rpx 0;
+  font-size: 34rpx;
+}
+
+.model>.box>.list>.item {
+  margin-bottom: 30rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 6rpx;
+  background: #F4F8FB;
+  border: 1rpx solid #fff;
+  color: #666;
+}
+
+.model>.box>.list>.sel {
+  border: 1rpx solid #97CBFF;
+  color: #0080FF;
+}
+
+.model>.box>.sub {
+  margin-top: 4vh;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #5781F5;
+  color: #fff;
+  border-radius: 45rpx;
+  font-size: 30rpx;
+}

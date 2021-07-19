@@ -1,0 +1,75 @@
+<view class="index">
+  <Navbar bgColor="#4763F4" color="#fff" text="首页"></Navbar>
+
+  <view class="content">
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="img">
+        <image src="/images/search.png" mode="aspectFill"></image>
+      </view>
+      <input type="text" placeholder="搜索您需要的服务" placeholder-class="placeholder" />
+    </view>
+
+    <!-- 轮播 -->
+    <swiper class="banner" autoplay="true" interval="3000" duration="500">
+      <swiper-item wx:for="{{swiper}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+
+    <!-- 公告 -->
+    <view class="notice">
+      <Notice list="{{notice}}"></Notice>
+    </view>
+
+    <!-- icon -->
+    <view class="icon">
+      <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
+        <view class="img">
+          <image src="{{item.img}}" mode="aspectFill"></image>
+        </view>
+        <view>{{item.title}}</view>
+      </view>
+    </view>
+
+    <!-- 标题 -->
+    <view class="title">
+      <view class="img">
+        <image src="/images/t.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">保修服务</view>
+    </view>
+
+    <!-- 保修 -->
+    <view class="repair">
+      <view class="box">
+        <view class="title">保修</view>
+        <view class="img">
+          <image src="/images/right1.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="memo">解决你的家庭烦恼</view>
+    </view>
+
+    <!-- 标题 -->
+    <view class="title">
+      <view class="img">
+        <image src="/images/t.png" mode="aspectFill"></image>
+      </view>
+      <view class="text">服务推荐</view>
+      <view class="right">
+        <view>更多</view>
+        <view class="img">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 推荐列表 -->
+    <view class="list">
+      <view class="item" wx:for="{{recommend}}" wx:key="index">
+        <Goods detail="{{item}}"></Goods>
+      </view>
+    </view>
+  </view>
+</view>

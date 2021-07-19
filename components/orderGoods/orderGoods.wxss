@@ -1,0 +1,70 @@
+.orderGoods {
+  margin-bottom: 40rpx;
+  border-radius: 12rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.orderGoods>.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #bfbfbf;
+  font-size: 24rpx;
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.orderGoods>.top>.type {
+  font-size: 30rpx;
+}
+
+.orderGoods>.top>.type1 {
+  color: #f73131;
+}
+
+.orderGoods>.top>.type2 {
+  color: #2828FF;
+}
+
+.orderGoods>.top>.type3 {
+  color: #2828FF;
+}
+
+.orderGoods>.server {
+  padding: 25rpx 0;
+}
+
+.orderGoods>.goods {
+  padding: 25rpx 0;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderGoods>.goods>.img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.orderGoods>.goods>.center {
+  margin: 0 20rpx;
+}
+
+.orderGoods>.goods>.center>.memo {
+  font-size: 22rpx;
+  color: #bfbfbf;
+  margin-top: 16rpx;
+}
+
+.orderGoods>.goods>.price {
+  color: #666;
+}
+
+.orderGoods>.goods>.price>span {
+  font-size: 22rpx;
+  margin-right: 6rpx;
+}

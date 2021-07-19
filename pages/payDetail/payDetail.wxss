@@ -1,0 +1,51 @@
+page {
+  background: #F6F7FB;
+}
+
+.content {
+  padding: 40rpx;
+}
+
+.list {
+  background: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+}
+
+.list>.title {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.list>.title>.img {
+  width: 30rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+}
+
+.list>.price {
+  font-size: 60rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.list>.price>span {
+  font-size: 30rpx;
+}
+
+.list>.item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+}
+
+.list>.item>.label{
+  color: #a8a8a8;
+}
+
+.list>.item>.text{
+  margin-left: 40rpx;
+  flex: 1;
+  text-align: right;
+}

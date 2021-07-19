@@ -1,0 +1,114 @@
+.self {
+  position: relative;
+}
+
+.bgCir {
+  margin-top: -80rpx;
+}
+
+.info {
+  padding: 10vh 40rpx 8vh 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.info>.img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.info>.detail {
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info>.detail>.title {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.info>.detail>.memo {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #f8f8f8;
+  font-weight: 300;
+}
+
+.info>.detail>.memo>.img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  line-height: 0;
+}
+
+.content {
+  padding: 0 40rpx 10vh 40rpx;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx 10%;
+  margin-top: -60rpx;
+}
+
+.icon>.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-size: 28rpx;
+}
+
+.icon>.item>.img {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 40rpx;
+}
+
+.list>.item {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  font-size: 28rpx;
+}
+
+.list>.item:last-child {
+  border: none;
+}
+
+.list>.item>.img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.list>.item>.label {
+  margin: 0 10rpx;
+  flex: 1;
+}
+
+.list>.item>.right {
+  width: 20rpx;
+  height: 20rpx;
+}

@@ -1,0 +1,32 @@
+<view class="coupon">
+  <Navbar1 text="联系客服"></Navbar1>
+
+  <view class="content">
+    <!-- tab -->
+    <view class="tab">
+      <view class="item" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">
+        <view class="{{tabIndex == index ? 'sel' : ''}}">{{item}}</view>
+        <view class="line {{tabIndex == index ? 'blue' : ''}}"></view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="list">
+      <view class="item {{tabIndex !== 0 ? 'gray' : ''}}" wx:for="{{list}}" wx:key="index">
+        <view class="cover1"></view>
+        <view class="cover2"></view>
+        <view class="img" wx:if="{{tabIndex === 1}}">
+          <image src="/images/coupon1.png" mode="aspectFill"></image>
+        </view>
+        <view class="img" wx:if="{{tabIndex === 2}}">
+          <image src="/images/coupon2.png" mode="aspectFill"></image>
+        </view>
+        <view class="label">{{item.label}}</view>
+        <view class="info">
+          <view class="title">{{item.title}}</view>
+          <view class="memo">·有效期：{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

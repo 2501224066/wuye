@@ -1,0 +1,53 @@
+.orderDetail {
+  position: relative;
+}
+
+.bgCir {
+  margin-top: -50rpx;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 4vh 40rpx 11vh 40rpx;
+  font-size: 38rpx;
+}
+
+.status>.img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.content {
+  padding: 0 40rpx;
+}
+
+.server {
+  margin-top: -100rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.list>.item {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.item>.label {
+  color: #a8a8a8;
+}
+
+.list>.item>.text {
+  flex: 1;
+  margin-left: 50rpx;
+  text-align: right;
+}

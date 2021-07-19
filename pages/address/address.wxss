@@ -1,0 +1,39 @@
+.list {
+  padding: 40rpx;
+}
+
+.list>.item {
+  margin-bottom: 40rpx;
+  background: #fff;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10rpx;
+}
+
+.list>.item>.detail {
+  flex: 1;
+  margin-right: 40rpx;
+}
+
+.list>.item>.detail>.man {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.list>.item>.detail>.man>view {
+  margin-right: 40rpx;
+}
+
+.list>.item>.detail>.where {
+  color: #bfbfbf;
+  margin-top: 10rpx;
+}
+
+.list>.item>.img {
+  width: 30rpx;
+  height: 30rpx;
+}

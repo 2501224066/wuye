@@ -1,0 +1,13 @@
+<view class="goods">
+  <Navbar1 bgColor="#4763F4" color="#fff" iconColor="white" text="服务列表"></Navbar1>
+
+  <view class="content">
+    <!-- 列表 -->
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="index">
+        <Goods detail="{{item}}"></Goods>
+      </view>
+    </view>
+
+  </view>
+</view>

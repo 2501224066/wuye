@@ -1,0 +1,120 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "缴费",
+          "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/self/self",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址列表",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址编辑",
+          "pathName": "pages/addressEdit/addressEdit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "服务列表",
+          "pathName": "pages/goods/goods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/confirm/confirm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "水费缴费详情",
+          "pathName": "pages/payDetail/payDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/orderDetail/orderDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品",
+          "pathName": "pages/goods/goods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "服务详情",
+          "pathName": "pages/goodsDetail/goodsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登陆",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改密码",
+          "pathName": "pages/pwdEdit/pwdEdit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "联系客服",
+          "pathName": "pages/contact/contact",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修",
+          "pathName": "pages/repair/repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修详情",
+          "pathName": "pages/repairDetail/repairDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "优惠券",
+          "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

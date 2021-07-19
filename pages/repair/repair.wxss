@@ -1,0 +1,76 @@
+.content {
+  padding: 40rpx;
+}
+
+.list>.item {
+  margin-bottom: 40rpx;
+  border-radius: 12rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.list>.item>.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #bfbfbf;
+  font-size: 24rpx;
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.list>.item>.top>.type {
+  font-size: 30rpx;
+}
+
+.list>.item>.top>.type1 {
+  color: #f73131;
+}
+
+.list>.item>.top>.type2 {
+  color: #f73131;
+}
+
+.list>.item>.top>.type3 {
+  color: #2828FF;
+}
+
+.list>.item>.server {
+  padding: 25rpx 0;
+}
+
+.list>.item>.info {
+  padding: 25rpx 0;
+  border-radius: 10rpx;
+}
+
+.list>.item>.info>.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.item>.info>.title>.img {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.list>.item>.info>.title>.label {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.list>.item>.info>.title>.price {
+  color: #666;
+}
+
+.list>.item>.info>.title>.price>span {
+  font-size: 22rpx;
+  margin-right: 6rpx;
+}
+
+.list>.item>.info>.memo {
+  font-size: 22rpx;
+  color: #666;
+  margin-top: 16rpx;
+}

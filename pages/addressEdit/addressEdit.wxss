@@ -1,0 +1,57 @@
+page {
+  background: #F6F7FB;
+}
+
+.content {
+  padding: 0 40rpx;
+}
+
+.list {
+  padding: 0 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 40rpx 0;
+}
+
+.list>.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+  color: #666;
+}
+
+.list>.item:last-child {
+  border: none;
+}
+
+.list>.item>.label {
+  width: 28%;
+}
+
+.list>.item>.ipt {
+  flex: 1;
+}
+
+.list>.item>.ipt>.input {
+  flex: 1;
+}
+
+.sub{
+  height: 80rpx;
+  border-radius: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.sub1{
+  background: #CDDBFA;
+}
+
+.sub2{
+  background: #5781F5;
+}
+
+

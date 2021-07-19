@@ -1,0 +1,36 @@
+<view class="addressEdit">
+  <Navbar1 text="新增地址"></Navbar1>
+
+  <view class="content">
+    <!-- 表单 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">姓名：</view>
+        <view class="ipt">
+          <input type="text" placeholder="请输入您的姓名" placeholder-class="placeholder"/>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">联系电话：</view>
+        <view class="ipt">
+          <input type="text" placeholder="请输入您的电话" placeholder-class="placeholder"/>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">所在地区：</view>
+        <view class="ipt">
+          <input type="text" placeholder="请输入所在地区" placeholder-class="placeholder"/>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">详细地址：</view>
+        <view class="ipt">
+          <input type="text" placeholder="详细地址，例 1 单元202" placeholder-class="placeholder"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="sub sub1">确定</view>
+
+  </view>
+</view>

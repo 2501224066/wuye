@@ -1,0 +1,41 @@
+.goods{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40rpx 0;
+}
+
+.goods>.img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.goods>.box {
+  flex: 1;
+  padding: 0 40rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods>.box>.top>.title {
+  font-size: 34rpx;
+}
+
+.goods>.box>.top>.memo {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.goods>.box>.price {
+  color: rgb(253, 51, 51);
+}
+
+.goods>.box>.price>span {
+  font-size: 26rpx;
+  margin-right: 6rpx;
+}

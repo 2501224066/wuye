@@ -1,0 +1,25 @@
+<view class="pwdEdit">
+  <Navbar1 bgColor="#4763F4" color="#fff" iconColor="white" text="联系客服"></Navbar1>
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="content">
+    <view class="phone shadow">
+      <view>联系管家：199-2321-1312</view>
+      <view class="img">
+        <image src="/images/phone.png" mode="aspectFill"></image>
+      </view>
+    </view>
+
+    <view class="box shadow">
+      <view class="qr">
+        <image src="/images/t.png" mode="widthFix"></image>
+      </view>
+      <view>扫码关注，获取更多资讯</view>
+    </view>
+
+  </view>
+</view>

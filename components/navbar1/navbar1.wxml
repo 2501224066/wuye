@@ -1,0 +1,12 @@
+<view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px;background:{{bgColor}};color:{{color}}">
+  <view class="content">
+    <view class="img" bindtap="to">
+      <image src="/images/left-{{iconColor}}.png" mode="aspectFill"></image>
+    </view>
+    <view class="title">{{text}}</view>
+    <view class="img"></view>
+  </view>
+</view>
+
+<!-- 支撑 -->
+<view wx:if="{{holdon}}" style="height:{{navHeight}}px;"></view>

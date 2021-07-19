@@ -1,0 +1,50 @@
+<view class="orderDetail">
+  <Navbar1 bgColor="#4763F4" iconColor="white" color="#fff" text="订单详情"></Navbar1>
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <!-- 状态 -->
+  <view class="status">
+    <view class="img">
+      <image src="{{status[2].img}}" mode="aspectFill"></image>
+    </view>
+    <view>{{status[2].label}}</view>
+  </view>
+
+  <view class="content">
+    <!-- 服务 -->
+    <view class="server">
+      <OrderGoods detail="{{goods}}"></OrderGoods>
+    </view>
+
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">联系人</view>
+        <view class="text">俩大</view>
+      </view>
+      <view class="item">
+        <view class="label">服务住址</view>
+        <view class="text">还擦但是看到撒的撒记得哈</view>
+      </view>
+      <view class="item">
+        <view class="label">预约时间</view>
+        <view class="text">2010.21.23 10:12</view>
+      </view>
+    </view>
+
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">订单编号</view>
+        <view class="text">90312312312312</view>
+      </view>
+      <view class="item">
+        <view class="label">下单时间</view>
+        <view class="text">2020.01.21 10:23</view>
+      </view>
+    </view>
+
+  </view>
+</view>

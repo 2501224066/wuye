@@ -1,0 +1,49 @@
+<view class="self">
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <!-- 信息 -->
+  <view class="info">
+    <view class="img">
+      <image src="/images/t.png" mode="aspectFill"></image>
+    </view>
+    <view class="detail">
+      <view class="title">奥特曼来了</view>
+      <view class="memo">
+        <view class="img">
+          <image src="/images/t.png" mode="aspectFill"></image>
+        </view>
+        <view>18823239923</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <!--icon -->
+    <view class="icon shadow">
+      <view class="item" wx:for="{{icon}}" wx:key="index">
+        <view class="img">
+          <image src="{{item.img}}" mode="aspectFill"></image>
+        </view>
+        <view>{{item.label}}</view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="list shadow">
+      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
+        <view class="img">
+          <image src="{{item.img}}" mode="aspectFill"></image>
+        </view>
+        <view class="label">{{item.label}}</view>
+        <view class="right">
+          <image src="/images/right.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

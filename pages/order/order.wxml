@@ -1,0 +1,20 @@
+<view class="order">
+  <Navbar bgColor="#4763F4" color="#fff" text="订单"></Navbar>
+
+  <view class="content">
+    <!-- tab -->
+    <view class="tab">
+      <view class="item" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">
+        <view class="{{tabIndex == index ? 'sel' : ''}}">{{item}}</view>
+        <view class="line {{tabIndex == index ? 'blue' : ''}}"></view>
+      </view>
+    </view>
+
+    <!-- 订单 -->
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="index">
+        <OrderGoods detail="{{item}}" header="true"></OrderGoods>
+      </view>
+    </view>
+  </view>
+</view>

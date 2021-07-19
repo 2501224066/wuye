@@ -1,0 +1,79 @@
+.content {
+  padding: 40rpx;
+}
+
+.noAddress {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 30rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.noAddress>.img {
+  width: 30rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.noAddress>.label {
+  flex: 1;
+}
+
+.noAddress>.r {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 30rpx;
+}
+
+.list>.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.list>.item:last-child {
+  border: none;
+}
+
+.list>.item>.img {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+.list>.item>.label {
+  width: 150rpx;
+}
+
+.list>.item>.ipt {
+  flex: 1;
+}
+
+.list>.item>.ipt>input {
+  flex: 1;
+  margin-right: 10rpx;
+  text-align: right;
+}
+
+.list>.item>.r {
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 0;
+}
+
+.list>.item>.checkout {
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 0;
+}

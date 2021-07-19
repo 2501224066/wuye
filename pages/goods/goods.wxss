@@ -1,0 +1,11 @@
+.content {
+  padding: 0 40rpx 10vh 40rpx;
+}
+
+.list>.item {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.list>.item:last-child{
+  border: none;
+}

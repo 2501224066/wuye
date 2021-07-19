@@ -1,0 +1,8 @@
+<view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px;background:{{bgColor}};color:{{color}}">
+  <view class="content">
+    {{text}}
+  </view>
+</view>
+
+<!-- 支撑 -->
+<view wx:if="{{holdon}}" style="height:{{navHeight}}px;"></view>

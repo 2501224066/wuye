@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/shunt/shunt",
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/order/order",
+    "pages/self/self",
+    "pages/address/address",
+    "pages/addressEdit/addressEdit",
+    "pages/goods/goods",
+    "pages/confirm/confirm",
+    "pages/payDetail/payDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/goodsDetail/goodsDetail",
+    "pages/login/login",
+    "pages/pwdEdit/pwdEdit",
+    "pages/contact/contact",
+    "pages/repair/repair",
+    "pages/repairDetail/repairDetail",
+    "pages/coupon/coupon"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#6b6b6c",
+    "color": "#dddede",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/t.png",
+        "selectedIconPath": "/images/t.png"
+      },
+      {
+        "pagePath": "pages/pay/pay",
+        "text": "缴费",
+        "iconPath": "/images/t.png",
+        "selectedIconPath": "/images/t.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "/images/t.png",
+        "selectedIconPath": "/images/t.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "我的",
+        "iconPath": "/images/t.png",
+        "selectedIconPath": "/images/t.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
