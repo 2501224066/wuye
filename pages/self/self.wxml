@@ -24,7 +24,7 @@
   <view class="content">
     <!--icon -->
     <view class="icon shadow">
-      <view class="item" wx:for="{{icon}}" wx:key="index">
+      <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
         <view class="img">
           <image src="{{item.img}}" mode="aspectFill"></image>
         </view>

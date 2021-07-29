@@ -1,3 +1,7 @@
+import {
+  dump
+} from "../../utils/util"
+
 Page({
   data: {
     status: {
@@ -47,4 +51,9 @@ Page({
       price: "288.00"
     }]
   },
+
+  // 跳转
+  to(e) {
+    dump(e)
+  }
 })

@@ -9,15 +9,15 @@ Page({
 
   // 分流
   shunt() {
-    if(wx.getStorageSync('userType') == 1){
+    if (wx.getStorageSync('userType') == 1) {
       // 用户端
       wx.switchTab({
         url: '/pages/index/index',
       })
-    }else{
+    } else {
       // 工人端
-      wx.switchTab({
-        url: '/pages/index/index',
+      wx.navigateTo({
+        url: '/pages/workerIndex/workerIndex',
       })
     }
   }

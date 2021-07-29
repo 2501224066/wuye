@@ -1,0 +1,88 @@
+<view class="workerOrderDetail">
+  <Navbar1 bgColor="#4763F4" iconColor="white" color="#fff" center="{{status[detail.status]}}"></Navbar1>
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="content">
+    <!-- 工单信息 -->
+    <view class="list shadow">
+      <view class="title">{{detail.title}}</view>
+      <view class="item">
+        <view class="label">责任类型</view>
+        <view class="center">{{duty[detail.duty]}}</view>
+      </view>
+      <view class="item">
+        <view class="label">报修类型</view>
+        <view class="center">xxx</view>
+      </view>
+      <view class="item">
+        <view class="label">报修小区</view>
+        <view class="center">xxx</view>
+      </view>
+      <view class="item">
+        <view class="label">报修人</view>
+        <view class="center">xxx</view>
+      </view>
+      <view class="item">
+        <view class="label">手机号</view>
+        <view class="center">14232323223</view>
+      </view>
+    </view>
+
+    <!-- 保修内容 -->
+    <view class="list shadow">
+      <view class="title">保修内容</view>
+      <view class="memo">幸福僖宗ISO大打算打算撒打算打算打算的就肯定会撒娇看到哦送达撒娇</view>
+      <view class="photo">
+        <view class="img" wx:for="{{5}}">
+          <image src="/images/t.png" mode="aspectFill"></image>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="{{index}}"></view>
+      </view>
+    </view>
+
+    <!-- 处理 -->
+    <view class="list shadow">
+      <view class="title">保修处理</view>
+      <!-- 上传图片 -->
+      <view class="imgbox">
+        <view class="img">
+          <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx"></image>
+        </view>
+        <view class="img" wx:for="{{5}}">
+          <image src="/images/t.png" mode="aspectFill"></image>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="{{index}}"></view>
+      </view>
+      <view class="text">
+        <textarea placeholder="服务结果描述" placeholder-class="placeholder"></textarea>
+      </view>
+      <view class="item">
+        <view class="label">报修金额</view>
+        <view class="center">
+          <input type="number" />
+        </view>
+        <view>元</view>
+      </view>
+      <view class="item">
+        <view class="label">提示</view>
+        <view class="center">用户支付报修金额后订单进入已完成状态</view>
+      </view>
+      <view class="btn">
+        确认提交
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+  <view class="fbox">
+    <view class="btn">已到达</view>
+  </view>
+</view>
+<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>

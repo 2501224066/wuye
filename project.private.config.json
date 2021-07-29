@@ -79,7 +79,7 @@
           "scene": null
         },
         {
-          "name": "登陆",
+          "name": "登录",
           "pathName": "pages/login/login",
           "query": "",
           "scene": null
@@ -111,6 +111,48 @@
         {
           "name": "优惠券",
           "pathName": "pages/coupon/coupon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修类型",
+          "pathName": "pages/repairItem/repairItem",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "增加报修",
+          "pathName": "pages/repairAdd/repairAdd",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "协议",
+          "pathName": "pages/agreement/agreement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工人端",
+          "pathName": "pages/workerIndex/workerIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工单",
+          "pathName": "pages/workerOrder/workerOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工单详情",
+          "pathName": "pages/workerOrderDetail/workerOrderDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工人信息",
+          "pathName": "pages/worker/worker",
           "query": "",
           "scene": null
         }

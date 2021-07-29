@@ -1,0 +1,21 @@
+<view class="repairItem">
+  <Navbar1 bgColor="#4763F4" color="#fff" iconColor="white" text="报修"></Navbar1>
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="content">
+    <!-- 类型 -->
+    <view class="list">
+      <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="to"
+        data-url="/pages/repairAdd/repairAdd?label={{item.label}}">
+        <view class="img">
+          <image src="{{item.img}}" mode="aspectFill"></image>
+        </view>
+        <view style="color:{{item.color}}">{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+</view>

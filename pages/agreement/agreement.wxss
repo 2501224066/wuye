@@ -1,0 +1,7 @@
+.agreement {
+  padding-bottom: 4vh;
+}
+
+.content {
+  padding: 0 40rpx;
+}

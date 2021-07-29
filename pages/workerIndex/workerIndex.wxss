@@ -1,0 +1,81 @@
+.workerIndex {
+  padding-bottom: 4vh;
+}
+
+.content {
+  padding: 40rpx;
+}
+
+.notice {
+  margin-bottom: 40rpx;
+}
+
+.icon {
+  padding: 40rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icon>.item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #666;
+}
+
+.icon>.item>.img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+}
+
+.list {
+  margin-top: 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 40rpx;
+}
+
+.list>.item {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  font-size: 28rpx;
+}
+
+.list>.item:last-child {
+  border: none;
+}
+
+.list>.item>.img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.list>.item>.label {
+  margin: 0 10rpx;
+  flex: 1;
+}
+
+.list>.item>.right {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.list>.item>.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 40rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.list>.item>.name {
+  font-size: 36rpx;
+  font-weight: bold;
+}

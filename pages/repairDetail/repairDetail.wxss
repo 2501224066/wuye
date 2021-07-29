@@ -1,4 +1,4 @@
-.orderDetail {
+.repairDetail {
   position: relative;
   padding-bottom: 14vh;
 }

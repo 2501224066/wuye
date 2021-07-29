@@ -1,0 +1,36 @@
+.repairItem {
+  position: relative;
+}
+
+.bgCir {
+  margin-top: -150rpx;
+}
+
+.content {
+  padding: 0 40rpx;
+  margin-top: 100rpx;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.list>.item {
+  width: 48%;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 50rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.list>.item>.img {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 15rpx;
+}

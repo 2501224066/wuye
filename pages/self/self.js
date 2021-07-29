@@ -35,7 +35,7 @@ Page({
       url: ""
     }, {
       img: "/images/self8.png",
-      label: "退出登陆",
+      label: "退出登录",
       url: ""
     }]
   },

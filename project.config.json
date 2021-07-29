@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -39,7 +39,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.18.0",
-  "appid": "wxf5ddf7821d0067dc",
+  "appid": "wx48779594333f7469",
   "projectname": "wuye",
   "debugOptions": {
     "hidedInDevtools": []

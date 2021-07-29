@@ -1,6 +1,6 @@
-const App = getApp();
-
-import {dump} from "../../utils/util"
+import {
+  dump
+} from "../../utils/util"
 
 Component({
   data: {
@@ -33,8 +33,8 @@ Component({
   lifetimes: {
     attached() {
       this.setData({
-        navHeight: App.globalData.navHeight,
-        navTop: App.globalData.navTop
+        navHeight: getApp().globalData.navHeight,
+        navTop: getApp().globalData.navTop
       })
     }
   },

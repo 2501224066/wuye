@@ -16,8 +16,15 @@
     "pages/pwdEdit/pwdEdit",
     "pages/contact/contact",
     "pages/repair/repair",
+    "pages/repairItem/repairItem",
+    "pages/repairAdd/repairAdd",
     "pages/repairDetail/repairDetail",
-    "pages/coupon/coupon"
+    "pages/coupon/coupon",
+    "pages/agreement/agreement",
+    "pages/workerIndex/workerIndex",
+    "pages/workerOrder/workerOrder",
+    "pages/workerOrderDetail/workerOrderDetail",
+    "pages/worker/worker"
   ],
   "window": {
     "navigationStyle": "custom",

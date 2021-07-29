@@ -1,5 +1,3 @@
-const App = getApp();
-
 Component({
   data: {
     navHeight: 0,
@@ -27,8 +25,8 @@ Component({
   lifetimes: {
     attached() {
       this.setData({
-        navHeight: App.globalData.navHeight,
-        navTop: App.globalData.navTop
+        navHeight: getApp().globalData.navHeight,
+        navTop: getApp().globalData.navTop
       })
     }
   },

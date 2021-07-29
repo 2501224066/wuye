@@ -1,4 +1,4 @@
-<view class="orderDetail">
+<view class="repairDetail">
   <Navbar1 bgColor="#4763F4" iconColor="white" color="#fff" text="报修详情"></Navbar1>
 
   <!-- 背景圆 -->

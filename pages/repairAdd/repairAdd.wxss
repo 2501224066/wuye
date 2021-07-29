@@ -1,0 +1,80 @@
+.repairAdd {
+  padding-bottom: 10vh;
+}
+
+.content {
+  padding: 40rpx;
+}
+
+.list {
+  padding: 0 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.list>.title {
+  font-weight: bold;
+  padding: 30rpx 0;
+}
+
+.list>.text {
+  border: 1rpx solid #f8f8f8;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+
+.list>.text>textarea {
+  width: 100%;
+  height: 200rpx;
+}
+
+.list>.imgbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+.list>.imgbox>.img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list>.imgbox>.temp {
+  width: 140rpx;
+  height: 0;
+}
+
+.list>.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.list>.item:last-child {
+  border: none;
+}
+
+.list>.item>.label {
+  width: 160rpx;
+}
+
+.list>.item>.ipt {
+  flex: 1;
+}
+
+.list>.item>.ipt>input {
+  flex: 1;
+}

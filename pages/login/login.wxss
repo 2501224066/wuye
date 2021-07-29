@@ -1,6 +1,6 @@
 .content {
   padding: 40rpx;
-  background: linear-gradient(to bottom, #4763F4 0%, #4763F4 50%, white 50%, white 100%);
+  background: linear-gradient(to bottom, #4763F4 0%, #4763F4 50%, #F4F8FB 50%, #F4F8FB 100%);
 }
 
 .box {
@@ -49,6 +49,8 @@
 }
 
 .bottom>.sub {
+  width: 100% !important;
+  padding: 0 !important;
   height: 90rpx;
   line-height: 90rpx;
   text-align: center;
@@ -56,13 +58,20 @@
   background: #435FF4;
   font-size: 36rpx;
   border-radius: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.bottom>button {
+  background: #fff !important;
+  color: #a8a8a8 !important;
+  font-weight: 400;
+  border: 2rpx solid #a8a8a8;
 }
 
 .bottom>.agree {
   color: #a8a8a8;
   text-align: center;
   font-size: 22rpx;
-  margin-top: 40rpx;
 }
 
 .bottom>.agree>span {

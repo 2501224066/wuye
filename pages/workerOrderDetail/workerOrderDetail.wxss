@@ -1,0 +1,120 @@
+.workerOrderDetail {
+  padding-bottom: 10vh;
+}
+
+.bgCir {
+  margin-top: -100rpx;
+}
+
+.content {
+  padding: 40rpx
+}
+
+.list {
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+  padding-bottom: 30rpx;
+}
+
+.list>.title {
+  padding: 30rpx 0;
+  font-size: 36rpx;
+  border-bottom: 1rpx dashed #f8f8f8;
+}
+
+.list>.item {
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list>.item>.label {
+  width: 150rpx;
+  color: #a8a8a8;
+}
+
+.list>.item>.center {
+  flex: 1;
+  text-align: right;
+  margin: 0 20rpx
+}
+
+.list>.item>.center>input {
+  flex: 1;
+}
+
+.list>.memo {
+  padding: 30rpx 0;
+  color: #999;
+}
+
+.list>.photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list>.photo>.img {
+  width: 140rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.list>.photo>.temp {
+  width: 140rpx;
+  height: 0;
+}
+
+
+.list>.imgbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+.list>.imgbox>.img {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list>.imgbox>.temp {
+  width: 140rpx;
+  height: 0;
+}
+
+.list>.text {
+  border: 1rpx solid #f8f8f8;
+  padding: 20rpx
+}
+
+.list>.text>textarea {
+  height: 200rpx;
+}
+
+.list>.btn {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #5781F5;
+  color: #fff;
+  border-radius: 45rpx;
+  font-size: 30rpx;
+  margin-top: 40rpx
+}

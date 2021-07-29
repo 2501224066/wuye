@@ -41,7 +41,7 @@
     </view>
 
     <!-- 保修 -->
-    <view class="repair">
+    <view class="repair" bindtap="to" data-url="/pages/repairItem/repairItem">
       <view class="box">
         <view class="title">保修</view>
         <view class="img">

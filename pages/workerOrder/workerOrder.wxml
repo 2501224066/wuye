@@ -1,0 +1,16 @@
+<view class="workerOrder">
+  <Navbar1 text="工单"></Navbar1>
+
+  <view class="content">
+    <view class="list">
+      <view class="item shadow" wx:for="{{list}}" wx:key="index">
+        <view class="top">{{item.address}}</view>
+        <view class="center">
+          <view class="text">{{item.content}}</view>
+        </view>
+        <view class="time">报修时间：{{item.time}}</view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,4 +1,11 @@
-import { dump } from "../../utils/util"
+import {
+  dump
+} from "../../utils/util"
+
+import {
+  banner,
+  icon
+} from "../../config/api"
 
 Page({
   data: {
@@ -55,12 +62,29 @@ Page({
     }]
   },
 
-  onLoad() {
+  onShow() {
+    this.getBanner()
+    this.getIcon()
+  },
 
+  // 获取轮播图
+  getBanner() {
+    banner().then(res => {
+      this.setData({
+        banner: res.data.data
+      })
+    })
+  },
+
+  // 获取 icon
+  getIcon() {
+    icon().then(res => {
+
+    })
   },
 
   // 跳转
-  to(e){
+  to(e) {
     dump(e)
   }
 })
