@@ -1,0 +1,76 @@
+<view class="workerOrderDetail">
+  <Navbar1 bgColor="#4763F4" iconColor="white" color="#fff" center="{{status[detail.status]}}"></Navbar1>
+
+  <!-- 背景圆 -->
+  <view class="bgCir">
+    <image src="/images/ellipse.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="content">
+    <!-- 工单信息 -->
+    <view class="list shadow">
+      <view class="title">{{status[detail.orderStatus]}}</view>
+      <view class="item">
+        <view class="label">服务地址</view>
+        <view class="center">{{detail.province + detail.city + detail.region + detail.address}}</view>
+      </view>
+      <view class="item">
+        <view class="label">服务时间</view>
+        <view class="center">{{detail.startTime}}</view>
+      </view>
+      <view class="item">
+        <view class="label">报修人</view>
+        <view class="center">{{detail.contactsName}}</view>
+      </view>
+      <view class="item">
+        <view class="label">手机号</view>
+        <view class="center">{{detail.contactsPhone}}</view>
+      </view>
+    </view>
+
+    <!-- 服务内容 -->
+    <view class="list shadow">
+      <view class="title">服务内容</view>
+      <view class="memo">{{detail.name}}</view>
+      <view class="photo">
+        <view class="img">
+          <image src="{{detail.coverImage}}" mode="aspectFill"></image>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
+      </view>
+    </view>
+
+    <!-- 处理 -->
+    <view class="list shadow" wx:if="{{detail.status == 2 || detail.status == 3}}">
+      <view class="title">服务处理</view>
+      <!-- 上传图片 -->
+      <view class="imgbox">
+        <view class="img" bindtap="upload">
+          <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx"></image>
+        </view>
+        <view class="img" wx:for="{{imgArr}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
+      </view>
+      <view class="text">
+        <textarea placeholder="服务结果描述" placeholder-class="placeholder"></textarea>
+      </view>
+      <view class="btn" wx:if="{{detail.status == 2}}" bindtap="before">
+        确认提交
+      </view>
+      <view class="btn" wx:if="{{detail.status == 3}}" bindtap="after">
+        确认提交
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx" wx:if="{{detail.status == 1}}">
+  <view class="fbox">
+    <view class="btn" bindtap="come">已到达</view>
+  </view>
+</view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>

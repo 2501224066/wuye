@@ -12,38 +12,35 @@
       </view>
 
       <view class="price">
-        <span>- ¥</span> 286.4
+        <span>- ¥</span> {{detail.money}}
       </view>
 
       <view class="item">
-        <view class="label">租客号</view>
-        <view class="text">981232189131</view>
-      </view>
-      <view class="item">
-        <view class="label">用水量</view>
-        <view class="text" wx:if="{{type == 1}}">24度</view>
-        <view class="text" wx:else>24顿</view>
+        <view class="label" wx:if="{{type == 1}}">用水量</view>
+        <view class="label" wx:else>用电量</view>
+        <view class="text" wx:if="{{type == 1}}">{{detail.useOf}}度</view>
+        <view class="text" wx:else>{{detail.useOf}}吨</view>
       </view>
       <view class="item">
         <view class="label">住地信息</view>
-        <view class="text">附录小区12好奥丢9动12还</view>
+        <view class="text">{{detail.roomNo}}</view>
       </view>
       <view class="item">
         <view class="label">使用时间</view>
-        <view class="text">2021.01.21-2021-03-12</view>
+        <view class="text">{{detail.start_time}} ~ {{detail.endTime}}</view>
       </view>
       <view class="item">
         <view class="label">订单编号</view>
-        <view class="text">29319293233213432343</view>
+        <view class="text">{{detail.orderNo}}</view>
       </view>
     </view>
   </view>
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx" wx:if="{{item.type == 1}}">
   <view class="fbox">
-    <view class="btn">立即支付</view>
+    <view class="btn" bindtap="pay">立即支付</view>
   </view>
 </view>
-<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>

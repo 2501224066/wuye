@@ -9,53 +9,53 @@
   <view class="content">
     <!-- 工单信息 -->
     <view class="list shadow">
-      <view class="title">{{detail.title}}</view>
+      <view class="title">{{status[detail.status]}}</view>
       <view class="item">
         <view class="label">责任类型</view>
-        <view class="center">{{duty[detail.duty]}}</view>
+        <view class="center">{{duty[detail.result]}}</view>
       </view>
       <view class="item">
         <view class="label">报修类型</view>
-        <view class="center">xxx</view>
+        <view class="center">{{detail.type}}</view>
       </view>
       <view class="item">
         <view class="label">报修小区</view>
-        <view class="center">xxx</view>
+        <view class="center">{{detail.address}}</view>
       </view>
       <view class="item">
         <view class="label">报修人</view>
-        <view class="center">xxx</view>
+        <view class="center">{{detail.name}}</view>
       </view>
       <view class="item">
         <view class="label">手机号</view>
-        <view class="center">14232323223</view>
+        <view class="center">{{detail.phone}}</view>
       </view>
     </view>
 
-    <!-- 保修内容 -->
+    <!-- 报修内容 -->
     <view class="list shadow">
-      <view class="title">保修内容</view>
-      <view class="memo">幸福僖宗ISO大打算打算撒打算打算打算的就肯定会撒娇看到哦送达撒娇</view>
+      <view class="title">报修内容</view>
+      <view class="memo">{{detail.described}}</view>
       <view class="photo">
-        <view class="img" wx:for="{{5}}">
-          <image src="/images/t.png" mode="aspectFill"></image>
+        <view class="img" wx:for="{{detail.image}}">
+          <image src="{{item}}" mode="aspectFill"></image>
         </view>
-        <view class="temp" wx:for="{{3}}" wx:key="{{index}}"></view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
       </view>
     </view>
 
     <!-- 处理 -->
-    <view class="list shadow">
-      <view class="title">保修处理</view>
+    <view class="list shadow" wx:if="{{detail.status == 2 || detail.status == 3}}">
+      <view class="title">报修处理</view>
       <!-- 上传图片 -->
       <view class="imgbox">
-        <view class="img">
+        <view class="img" bindtap="upload">
           <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx"></image>
         </view>
-        <view class="img" wx:for="{{5}}">
-          <image src="/images/t.png" mode="aspectFill"></image>
+        <view class="img" wx:for="{{imgArr}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
         </view>
-        <view class="temp" wx:for="{{3}}" wx:key="{{index}}"></view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
       </view>
       <view class="text">
         <textarea placeholder="服务结果描述" placeholder-class="placeholder"></textarea>
@@ -63,7 +63,8 @@
       <view class="item">
         <view class="label">报修金额</view>
         <view class="center">
-          <input type="number" />
+          <input type="number" disabled="{{detail.result==1 ? true : false}}" value="{{money}}" bindtap="setState"
+            data-name="money" />
         </view>
         <view>元</view>
       </view>
@@ -71,7 +72,10 @@
         <view class="label">提示</view>
         <view class="center">用户支付报修金额后订单进入已完成状态</view>
       </view>
-      <view class="btn">
+      <view class="btn" wx:if="{{detail.status == 2}}" bindtap="before">
+        确认提交
+      </view>
+      <view class="btn" wx:if="{{detail.status == 3}}" bindtap="after">
         确认提交
       </view>
 
@@ -80,9 +84,9 @@
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx" wx:if="{{detail.status == 1}}">
   <view class="fbox">
-    <view class="btn">已到达</view>
+    <view class="btn" bindtap="come">已到达</view>
   </view>
 </view>
-<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>

@@ -32,13 +32,20 @@ page {
 
 .list>.item>.ipt {
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.list>.item>.ipt>.input {
+.list>.item>.ipt>input,
+.list>.item>.ipt>picker {
   flex: 1;
 }
 
-.sub{
+.list>.item>.ipt>switch {
+  transform: scale(.8);
+}
+
+.sub {
   height: 80rpx;
   border-radius: 40rpx;
   line-height: 80rpx;
@@ -46,12 +53,10 @@ page {
   color: #fff;
 }
 
-.sub1{
+.sub1 {
   background: #CDDBFA;
 }
 
-.sub2{
+.sub2 {
   background: #5781F5;
 }
-
-

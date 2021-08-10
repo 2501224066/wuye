@@ -16,8 +16,9 @@ Page({
       })
     } else {
       // 工人端
+      wx.setStorageSync('tabbarIndex', 0)
       wx.navigateTo({
-        url: '/pages/workerIndex/workerIndex',
+        url: '/pages/workbench/workbench',
       })
     }
   }

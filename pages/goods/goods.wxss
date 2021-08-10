@@ -1,3 +1,7 @@
+page {
+  background: #fff;
+}
+
 .content {
   padding: 0 40rpx 10vh 40rpx;
 }
@@ -6,6 +10,6 @@
   border-bottom: 1rpx solid #f8f8f8;
 }
 
-.list>.item:last-child{
+.list>.item:last-child {
   border: none;
 }

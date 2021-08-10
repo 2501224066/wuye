@@ -1,36 +1,62 @@
+import {
+  orderList
+} from "../../config/api"
+
 Page({
   data: {
-    tab: ["全部", "待服务", "服务中", "已完成"],
+    tab: {
+      0: "待支付",
+      1: "待服务",
+      2: "服务中",
+      3: "待验收",
+      4: "已完成"
+    },
     tabIndex: 0,
-    list: [{
-      time: "2021-05-12 22:02",
-      type: "1",
-      img: "/images/t.png",
-      title: "专业家政｜保洁到家",
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }, {
-      time: "2021-05-12 22:02",
-      type: "2",
-      img: "/images/t.png",
-      title: "专业家政｜保洁到家",
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }, {
-      time: "2021-05-12 22:02",
-      type: "3",
-      img: "/images/t.png",
-      title: "专业家政｜保洁到家",
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }]
+    list: [],
+    page: 1,
+    pageSize: 10
+  },
+
+  onLoad() {
+    this.getOrderList()
+  },
+
+  onShow() {
+    wx.$verifyLogin()
+  },
+
+  // 订单列表
+  getOrderList(addStatus = false) {
+    orderList({
+      orderStatus: this.data.tabIndex,
+      page: this.data.page,
+      pageSize: this.data.pageSize
+    }).then(res => {
+      this.setData({
+        list: addStatus ? this.data.list.concat(res.data.records) : res.data.records
+      })
+    })
   },
 
   // 切换Tab
   checkoutTab(e) {
     this.setData({
-      tabIndex: e.currentTarget.dataset.index
+      tabIndex: e.currentTarget.dataset.index,
+      page: 1
     })
+    this.getOrderList()
   },
 
+  // 触底
+  onReachBottom() {
+    this.setData({
+      page: this.data.page + 1
+    })
+    this.getOrderList(true)
+  },
+
+  // 跳转
+  to(e) {
+    wx.$dump(e)
+  },
 })

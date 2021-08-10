@@ -10,11 +10,11 @@
     <!-- 类型 -->
     <view class="list">
       <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="to"
-        data-url="/pages/repairAdd/repairAdd?label={{item.label}}">
+        data-url="/pages/repairAdd/repairAdd?label={{item.name}}">
         <view class="img">
-          <image src="{{item.img}}" mode="aspectFill"></image>
+          <image src="{{item.image}}" mode="aspectFill"></image>
         </view>
-        <view style="color:{{item.color}}">{{item.label}}</view>
+        <view style="color:{{item.color}}">{{item.name}}</view>
       </view>
     </view>
   </view>

@@ -8,9 +8,9 @@
 
   <view class="content">
     <view class="phone shadow">
-      <view>联系管家：199-2321-1312</view>
+      <view>联系管家：{{detail.serviceTel}}</view>
       <view class="img">
-        <image src="/images/phone.png" mode="aspectFill"></image>
+        <image src="{{detail.serviceCode == '' ? '/images/phone.png' : detail.serviceCode}}" mode="aspectFill"></image>
       </view>
     </view>
 

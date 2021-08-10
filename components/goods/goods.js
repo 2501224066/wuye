@@ -4,4 +4,10 @@ Component({
       type: JSON,
     },
   },
+  methods: {
+    // 跳转
+    to(e) {
+      wx.$dump(e)
+    }
+  }
 })

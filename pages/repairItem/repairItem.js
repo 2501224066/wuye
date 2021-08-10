@@ -1,6 +1,6 @@
 import {
-  dump
-} from "../../utils/util"
+  repairItemList
+} from "../../config/api"
 
 Page({
   data: {
@@ -27,8 +27,21 @@ Page({
     }]
   },
 
+  onLoad() {
+    this.getRepairItemList()
+  },
+
+  // 类型列表
+  getRepairItemList() {
+    repairItemList().then(res => {
+      this.setData({
+        list: res.data
+      })
+    })
+  },
+
   // 跳转
   to(e) {
-    dump(e)
+    wx.$dump(e)
   }
 })

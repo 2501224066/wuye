@@ -1,41 +1,55 @@
+import {
+  goodsDetail,
+  skuList
+} from "../../config/api"
+
 Page({
   data: {
     iphoneFooter: false,
     skuModelShow: false,
-    type: {
-      1: "房屋打扫"
-    },
-    detail: {
-      type: 1,
-      title: '专业家政【房屋打扫】深度清洁+3小时消毒家政保洁',
-      img: [
-        '/images/banner.png'
-      ],
-      price: '288.00',
-      oldPrice: "310",
-      memo: "深度清洁+3小时打扫",
-      more: ["/images/t.png", "/images/t.png", "/images/t.png"]
-    },
-    sku: [{
-      price: 299.00,
-      title: '经典套餐A：日常保洁3小时+1次擦玻璃',
-      img: "/images/t.png"
-    }, {
-      price: 100.00,
-      title: '经典套餐A：日常保洁3小时+1次擦玻璃',
-      img: "/images/t.png"
-    }],
-    skuIndex: null
+    detail: {},
+    sku: [],
+    skuIndex: null,
+    packageBusinessId: 0,
   },
 
-  onShow() {
+  onLoad(options) {
     this.setData({
+      packageBusinessId: options.packageBusinessId,
       iphoneFooter: getApp().globalData.iphoneFooter,
+    })
+    this.getGoodsDetail()
+    this.getSkuList()
+  },
+
+  onHide() {
+    this.skuModelShow()
+  },
+
+  // 商品详情
+  getGoodsDetail() {
+    goodsDetail({
+      packageBusinessId: this.data.packageBusinessId
+    }).then(res => {
+      this.setData({
+        detail: res.data
+      })
+    })
+  },
+
+  // sku 列表
+  getSkuList() {
+    skuList({
+      packageBusinessId: this.data.packageBusinessId
+    }).then(res => {
+      this.setData({
+        sku: res.data
+      })
     })
   },
 
   // 模态开关
-  skuModelShow(){
+  skuModelShow() {
     this.setData({
       skuModelShow: !this.data.skuModelShow
     })
@@ -46,6 +60,10 @@ Page({
     this.setData({
       skuIndex: e.currentTarget.dataset.index
     })
-  }
+  },
 
+  // 跳转
+  to(e) {
+    wx.$dump(e)
+  }
 })

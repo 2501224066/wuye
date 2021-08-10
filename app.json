@@ -13,18 +13,19 @@
     "pages/orderDetail/orderDetail",
     "pages/goodsDetail/goodsDetail",
     "pages/login/login",
-    "pages/pwdEdit/pwdEdit",
     "pages/contact/contact",
     "pages/repair/repair",
     "pages/repairItem/repairItem",
     "pages/repairAdd/repairAdd",
     "pages/repairDetail/repairDetail",
     "pages/coupon/coupon",
-    "pages/agreement/agreement",
     "pages/workerIndex/workerIndex",
     "pages/workerOrder/workerOrder",
-    "pages/workerOrderDetail/workerOrderDetail",
-    "pages/worker/worker"
+    "pages/workerOrderDetail1/workerOrderDetail1",
+    "pages/workerOrderDetail2/workerOrderDetail2",
+    "pages/workbench/workbench",
+    "pages/payRes/payRes",
+    "pages/text/text"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -34,32 +35,32 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#6b6b6c",
-    "color": "#dddede",
+    "selectedColor": "#4763F4",
+    "color": "#dbdbdb",
     "borderStyle": "white",
     "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "/images/t.png",
-        "selectedIconPath": "/images/t.png"
+        "iconPath": "/images/menu1.png",
+        "selectedIconPath": "/images/menu1Sel.png"
       },
       {
         "pagePath": "pages/pay/pay",
         "text": "缴费",
-        "iconPath": "/images/t.png",
-        "selectedIconPath": "/images/t.png"
+        "iconPath": "/images/menu2.png",
+        "selectedIconPath": "/images/menu2Sel.png"
       },
       {
         "pagePath": "pages/order/order",
         "text": "订单",
-        "iconPath": "/images/t.png",
-        "selectedIconPath": "/images/t.png"
+        "iconPath": "/images/menu3.png",
+        "selectedIconPath": "/images/menu3Sel.png"
       },
       {
         "pagePath": "pages/self/self",
         "text": "我的",
-        "iconPath": "/images/t.png",
-        "selectedIconPath": "/images/t.png"
+        "iconPath": "/images/menu4.png",
+        "selectedIconPath": "/images/menu4Sel.png"
       }
     ]
   },

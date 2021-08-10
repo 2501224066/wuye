@@ -51,7 +51,7 @@
         {
           "name": "确认订单",
           "pathName": "pages/confirm/confirm",
-          "query": "",
+          "query": "id=246&skuId=31",
           "scene": null
         },
         {
@@ -81,12 +81,6 @@
         {
           "name": "登录",
           "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "修改密码",
-          "pathName": "pages/pwdEdit/pwdEdit",
           "query": "",
           "scene": null
         },
@@ -133,7 +127,7 @@
           "scene": null
         },
         {
-          "name": "工人端",
+          "name": "工人中心",
           "pathName": "pages/workerIndex/workerIndex",
           "query": "",
           "scene": null
@@ -151,8 +145,26 @@
           "scene": null
         },
         {
-          "name": "工人信息",
-          "pathName": "pages/worker/worker",
+          "name": "用户信息",
+          "pathName": "pages/infoEdit/infoEdit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "工作台",
+          "pathName": "pages/workbench/workbench",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "支付结果",
+          "pathName": "pages/payRes/payRes",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "文本",
+          "pathName": "pages/text/text",
           "query": "",
           "scene": null
         }

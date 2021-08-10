@@ -1,7 +1,3 @@
-import {
-  dump
-} from "../../utils/util"
-
 Page({
   data: {
     status: {
@@ -54,6 +50,6 @@ Page({
 
   // 跳转
   to(e) {
-    dump(e)
+    wx.$dump(e)
   }
 })

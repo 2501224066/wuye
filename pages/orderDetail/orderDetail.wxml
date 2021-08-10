@@ -9,9 +9,9 @@
   <!-- 状态 -->
   <view class="status">
     <view class="img">
-      <image src="{{status[2].img}}" mode="aspectFill"></image>
+      <image src="{{status[detail.orderStatus].img}}" mode="aspectFill"></image>
     </view>
-    <view>{{status[2].label}}</view>
+    <view>{{status[detail.orderStatus].label}}</view>
   </view>
 
   <view class="content">
@@ -23,11 +23,11 @@
     <view class="list shadow">
       <view class="item">
         <view class="label">联系人</view>
-        <view class="text">俩大</view>
+        <view class="text">{{detail.contactsName}}</view>
       </view>
       <view class="item">
         <view class="label">服务住址</view>
-        <view class="text">还擦但是看到撒的撒记得哈</view>
+        <view class="text">{{detail.province + detail.city + detail.region + detail.address}}</view>
       </view>
       <view class="item">
         <view class="label">预约时间</view>
@@ -38,11 +38,11 @@
     <view class="list shadow">
       <view class="item">
         <view class="label">订单编号</view>
-        <view class="text">90312312312312</view>
+        <view class="text">{{detail.orderCode}}</view>
       </view>
       <view class="item">
         <view class="label">下单时间</view>
-        <view class="text">2020.01.21 10:23</view>
+        <view class="text">{{detail.createTime}}</view>
       </view>
     </view>
 

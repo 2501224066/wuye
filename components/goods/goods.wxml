@@ -1,14 +1,15 @@
-<view class="goods">
+<view class="goods" bindtap="to"
+  data-url="/pages/goodsDetail/goodsDetail?packageBusinessId={{detail.packageBusinessId}}">
   <view class="img">
-    <image src="{{detail.img}}" mode="aspectFill"></image>
+    <image src="{{detail.coverImage}}" mode="aspectFill"></image>
   </view>
   <view class="box">
     <view class="top">
-      <view class="title">{{detail.title}}</view>
-      <view class="memo">{{detail.memo}}</view>
+      <view class="title">{{detail.name}}</view>
+      <view class="memo">{{detail.entInstruction}}</view>
     </view>
     <view class="price">
-      <span>¥</span>{{detail.price}}
+      <span>¥</span>{{detail.unitPrice}}
     </view>
   </view>
 </view>

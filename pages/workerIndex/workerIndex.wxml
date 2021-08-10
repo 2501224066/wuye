@@ -1,34 +1,16 @@
 <view class="workerIndex">
-  <Navbar bgColor="#4763F4" color="#fff" text="工作台"></Navbar>
+  <Navbar bgColor="#4763F4" color="#fff" text="我的"></Navbar>
 
   <view class="content">
-    <!-- 公告 -->
-    <view class="notice">
-      <Notice list="{{notice}}"></Notice>
-    </view>
-
-    <!-- icon -->
-    <view class="icon">
-      <view class="item" wx:for="{{icon}}" wx:key="index">
-        <view class="img">
-          <image src="{{item.img}}" mode="aspectFill"></image>
-        </view>
-        <view>{{item.label}}</view>
-      </view>
-    </view>
-
     <!-- 列表 -->
     <view class="list shadow">
       <view class="item info">
         <view class="img avatar shadow">
-          <image src="/images/t.png" mode="aspectFill"></image>
+          <image src="{{workerInfo.image ? workerInfo.image : '/images/t.png'}}" mode="aspectFill"></image>
         </view>
-        <view class="label name">刘师傅</view>
-        <view class="right">
-          <image src="/images/right.png" mode="aspectFill"></image>
-        </view>
+        <view class="label name">{{workerInfo.name}}</view>
       </view>
-      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
+      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="{{item.url}}" data-label="{{item.label}}">
         <view class="img">
           <image src="{{item.img}}" mode="aspectFill"></image>
         </view>
@@ -38,6 +20,7 @@
         </view>
       </view>
     </view>
-
   </view>
 </view>
+
+<Tabbar></Tabbar>

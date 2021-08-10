@@ -1,6 +1,6 @@
 {
   "usingComponents": {
     "Navbar": "/components/navbar/navbar",
-    "Notice": "/components/notice/notice"
+    "Tabbar": "/components/tabbar/tabbar"
   }
 }

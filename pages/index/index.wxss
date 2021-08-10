@@ -14,10 +14,11 @@
   height: 100rpx;
   background: #f3f7ff;
   border-radius: 40rpx;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40rpx;
+  padding-left: 40rpx;
   margin-bottom: 40rpx;
 }
 
@@ -33,6 +34,19 @@
 
 .search>input .placeholder {
   color: #C2C6CC;
+}
+
+.search>.btn {
+  width: 200rpx;
+  height: 100rpx;
+  text-align: center;
+}
+
+.search>.btn .checkout {
+  background-color: #4763F4;
+  color: #fff;
+  line-height: 100rpx;
+  border-radius: 40rpx;
 }
 
 .banner {
@@ -71,14 +85,19 @@
   margin-bottom: 20rpx;
 }
 
+.icon>.temp {
+  width: 25%;
+  height: 0;
+}
+
 .title {
   display: flex;
   align-items: center;
 }
 
 .title>.img {
-  width: 40rpx;
-  height: 40rpx;
+  width: 35rpx;
+  height: 35rpx;
 }
 
 .title>.text {

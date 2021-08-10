@@ -8,15 +8,15 @@
   <!-- 信息 -->
   <view class="info">
     <view class="img">
-      <image src="/images/t.png" mode="aspectFill"></image>
+      <image src="{{userInfo.portrait == '' ?  '/images/t.png' : userInfo.portrait}}" mode="aspectFill"></image>
     </view>
     <view class="detail">
-      <view class="title">奥特曼来了</view>
+      <view class="title">{{userInfo.nickname == '' ? '亲爱的用户' : userInfo.nickname}}</view>
       <view class="memo">
         <view class="img">
-          <image src="/images/t.png" mode="aspectFill"></image>
+          <image src="/images/phone1.png" mode="aspectFill"></image>
         </view>
-        <view>18823239923</view>
+        <view>{{userInfo.phone}}</view>
       </view>
     </view>
   </view>
@@ -34,7 +34,8 @@
 
     <!-- 列表 -->
     <view class="list shadow">
-      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
+      <view class="item" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="{{item.url}}"
+        data-label="{{item.label}}">
         <view class="img">
           <image src="{{item.img}}" mode="aspectFill"></image>
         </view>

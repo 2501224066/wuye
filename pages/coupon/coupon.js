@@ -1,22 +1,38 @@
+import {
+  couponList
+} from "../../config/api"
+
 Page({
   data: {
-    tab: ["待使用", "已使用", "已失效"],
-    tabIndex: 0,
-    list: [{
-      label: '赠送',
-      title: '20元优惠券',
-      time: '2021-05-30',
-    }, {
-      label: '赠送',
-      title: '20元优惠券',
-      time: '2021-05-30',
-    }]
+    tab: {
+      1: "待使用",
+      2: "已使用",
+      3: "已失效"
+    },
+    tabIndex: 1,
+    list: []
+  },
+
+  onLoad() {
+    this.getCouponList()
+  },
+
+  // 获取优惠券列表
+  getCouponList() {
+    couponList({
+      type: this.data.tabIndex,
+    }).then(res => {
+      this.setData({
+        list: res.data
+      })
+    })
   },
 
   // 切换Tab
   checkoutTab(e) {
     this.setData({
-      tabIndex: e.currentTarget.dataset.index
+      tabIndex: +e.currentTarget.dataset.index
     })
+    this.getCouponList()
   },
 })

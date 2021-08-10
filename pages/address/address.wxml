@@ -3,15 +3,16 @@
 
   <!-- 列表 -->
   <view class="list">
-    <view class="item shadow" wx:for="{{list}}" wx:key="index">
+    <view class="item shadow" wx:for="{{list}}" wx:key="index" bindlongtap="del" data-id="{{item.addressId}}"
+      data-index="{{index}}">
       <view class="detail">
         <view class="man">
-          <view>{{item.name}}</view>
-          <view>{{item.phone}}</view>
+          <view>{{item.contactsName}}</view>
+          <view>{{item.contactsPhone}}</view>
         </view>
         <view class="where">{{item.address}}</view>
       </view>
-      <view class="img">
+      <view class="img" bindtap="toEdit" data-index="{{index}}">
         <image src="/images/right.png"></image>
       </view>
     </view>
@@ -19,9 +20,9 @@
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx">
   <view class="fbox">
-    <view class="btn">添加新地址</view>
+    <view class="btn" bindtap="to" data-url="/pages/addressEdit/addressEdit">添加新地址</view>
   </view>
 </view>
-<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>

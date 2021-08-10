@@ -52,6 +52,7 @@
 
 .orderGoods>.goods>.center {
   margin: 0 20rpx;
+  flex: 1;
 }
 
 .orderGoods>.goods>.center>.memo {

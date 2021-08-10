@@ -1,7 +1,3 @@
-import {
-  dump
-} from "../../utils/util"
-
 Component({
   data: {
     navHeight: 0,
@@ -27,6 +23,10 @@ Component({
     holdon: { // 是否撑开
       type: Boolean,
       value: true
+    },
+    home: { // 返回首页
+      type: Boolean,
+      value: false
     }
   },
 
@@ -42,7 +42,7 @@ Component({
   methods: {
     // 跳转
     to(e) {
-      dump(e)
+      wx.$dump(e)
     }
   }
 })

@@ -14,20 +14,19 @@ const go = function (obj) {
       method: obj.method,
       data: obj.data,
       header: {
-        'Authorization': wx.getStorageSync('token') || '',
+        'token': wx.getStorageSync('token') || '',
         'content-type': 'application/json', // 默认值
-        'Api-Version': '1.0.4'
       },
       success: function (res) {
         wx.hideLoading() //隐藏loading
-        if (res.data.code === 200) {
+        if (res.data.code === "200") {
           resolve(res.data)
-        } else if (res.data.code === 401) {
+        } else if (res.data.code === "401") {
           wx.showToast({
             icon: "loading",
             title: '请重新登录',
           })
-          setTimeout(()=>{
+          setTimeout(() => {
             wx.navigateTo({
               url: '/pages/login/login',
             })

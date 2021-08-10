@@ -15,16 +15,19 @@
   align-items: center;
   margin: 0 0 20rpx 0;
   font-size: 34rpx;
+  overflow-x: auto;
 }
 
 .tab>.item {
-  margin-right: 50rpx;
+  margin-right: 20rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #a0a0a0;
   font-weight: 400;
+  flex-basis: 20%;
+  flex-shrink: 0;
 }
 
 .tab>.item>.sel {

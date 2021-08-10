@@ -1,7 +1,0 @@
-<view class="agreement">
-  <Navbar1 text="{{typeArr[type]}}"></Navbar1>
-
-  <view class="content">
-    <text></text>
-  </view>
-</view>

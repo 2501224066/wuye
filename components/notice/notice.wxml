@@ -3,8 +3,8 @@
     <image src="/images/notice.png" mode="aspectFill"></image>
   </view>
   <swiper class="text" autoplay="true" interval="3000" duration="500" vertical="true">
-    <swiper-item wx:for="{{list}}" wx:key="index">
-      {{item}}
+    <swiper-item catchtouchmove='catchTouchMove' wx:for="{{list}}" wx:key="index" bindtap="to" data-url="/pages/text/text?text={{item.context}}">
+      {{item.title}}
     </swiper-item>
   </swiper>
 </view>

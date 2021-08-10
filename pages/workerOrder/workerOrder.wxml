@@ -1,14 +1,23 @@
 <view class="workerOrder">
-  <Navbar1 text="工单"></Navbar1>
+  <Navbar1 text="{{text}}"></Navbar1>
 
   <view class="content">
+    <!-- tab -->
+    <view class="tab">
+      <view class="item" wx:for="{{tab}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">
+        <view class="{{tabIndex == index ? 'sel' : ''}}">{{item}}</view>
+        <view class="line {{tabIndex == index ? 'blue' : ''}}"></view>
+      </view>
+    </view>
+
     <view class="list">
-      <view class="item shadow" wx:for="{{list}}" wx:key="index">
+      <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="to"
+        data-url="/pages/workerOrderDetail{{type}}/workerOrderDetail{{type}}?id={{item.orderId}}{{item.maintenanceOrderId}}">
         <view class="top">{{item.address}}</view>
         <view class="center">
-          <view class="text">{{item.content}}</view>
+          <view class="text">{{item.name}}{{item.described}}</view>
         </view>
-        <view class="time">报修时间：{{item.time}}</view>
+        <view class="time">报修时间：{{item.createTime}}{{item.creatTime}}</view>
       </view>
     </view>
 

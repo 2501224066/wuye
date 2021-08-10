@@ -1,104 +1,164 @@
 import {
-  dump
-} from "../../utils/util"
-
-import {
-  login
+  userLogin,
+  sendCode,
+  workerLogin
 } from "../../config/api"
 
 Page({
   data: {
     title: {
-      0: '登录',
-      1: '找回密码'
+      0: '用户登录',
+      1: '工人登录'
     },
     pwdShow: false,
     tabIndex: 0,
-    phoneDetail: {}
+    count: 0,
+    userLogin: {
+      phone: '18827335317',
+      smsCode: '666666'
+    },
+    workerLogin: {
+      account: '123456789',
+      password: '123456',
+    },
   },
 
   onLoad() {
-    this.getCode()
-  },
-
-  // 获取code
-  getCode() {
-    let that = this
-    wx.login({
-      success(res) {
-        that.setData({
-          code: res.code
-        })
-      }
+    this.setData({
+      tabIndex: wx.getStorageSync('userType') == 1 ? 0 : 1
     })
   },
 
-  // 获取手机号登录
-  getPhoneNumber(e) {
-    // 拒绝授权
-    if (e.detail.errMsg != 'getPhoneNumber:ok') {
-      return false
-    }
-    let that = this
-    wx.checkSession({
-      success() {
-        console.log(e.detail)
-        that.setData({
-          phoneDetail: e
-        })
-        that.getUserInfo()
-        // that.login()
-      },
-      fail() {
-        that.login()
-      }
+  // 修改状态
+  setState(e) {
+    this.setData({
+      [e.currentTarget.dataset.name]: e.detail.value
     })
   },
 
-  // 登录
-  login() {
-    var obj = {
-      nickName: wx.setStorageSync('userInfo').nickName,
-      sex: wx.setStorageSync('userInfo').nickName,
-      portrait: wx.setStorageSync('userInfo').nickName,
-      iv: this.data.phoneDetail.iv,
-      encryptedData: this.data.phoneDetail.encryptedData,
-    }
-    login(obj).then(res => {
-      wx.setStorageSync('token', res.data.token)
-      wx.setStorageSync('loginStatus', true)
+  // 发送验证码
+  sendCode() {
+    if (this.data.userLogin.phone == '') {
       wx.showToast({
-        icon: "success",
-        title: '登录成功',
-        success() {
-          // 分享回调
-          that.shareBack()
-
-          if (!wx.getStorageSync('authStatus')) {
-            wx.navigateTo({
-              url: '/pages/authorize/authorize',
-            })
-          } else {
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
-          }
-        }
+        icon: 'loading',
+        title: '请填写手机号',
+      })
+      return
+    }
+    sendCode({
+      phoneNo: this.data.userLogin.phone
+    }).then(res => {
+      this.setData({
+        count: 60
+      })
+      this.wait()
+      wx.showToast({
+        icon: 'success',
+        title: '发送成功',
       })
     })
   },
 
-  // 用户信息授权
-  getUserInfo() {
-    wx.getUserProfile({
-      desc: '用于完善会员资料',
-      success: (res) => {
-        console.log(res)
-        wx.setStorageSync('userInfo', res.userInfo)
-      },
-      fail(res) {
-        console.log(res)
+  // 验证码计时
+  wait() {
+    let count = this.data.count;
+    var countdown = setInterval(() => {
+      if (count == 0) {
+        this.setData({
+          count: this.data.count
+        });
+        clearInterval(countdown);
+      } else {
+        this.setData({
+          count: count--
+        });
       }
+    }, 1000);
+  },
+
+  // 用户登陆
+  userLogin() {
+    if (this.data.userLogin.phone == '') {
+      wx.showToast({
+        icon: 'loading',
+        title: '请填写手机号',
+      })
+      return
+    }
+    if (this.data.userLogin.smsCode == '') {
+      wx.showToast({
+        icon: 'loading',
+        title: '请填写验证码',
+      })
+      return
+    }
+    this.getCode().then(res => {
+      userLogin({
+        smsCode: this.data.userLogin.smsCode,
+        phone: this.data.userLogin.phone,
+        code: res
+      }).then(res => {
+        wx.setStorageSync('loginStatus', true)
+        wx.setStorageSync('token', res.data.token)
+        wx.setStorageSync('userType', 1)
+        wx.setStorageSync('userInfo', res.data)
+        wx.showToast({
+          icon: "success",
+          title: '登陆成功',
+        })
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/shunt/shunt',
+          })
+        }, 1000)
+      })
+    })
+  },
+
+  // 工人登陆
+  workerLogin() {
+    if (this.data.workerLogin.account == '') {
+      wx.showToast({
+        icon: 'loading',
+        title: '请填写手机号',
+      })
+      return
+    }
+    if (this.data.workerLogin.password == '') {
+      wx.showToast({
+        icon: 'loading',
+        title: '请填写密码',
+      })
+      return
+    }
+    workerLogin({
+      phone: this.data.workerLogin.account,
+      password: this.data.workerLogin.password,
+    }).then(res => {
+      wx.setStorageSync('loginStatus', true)
+      wx.setStorageSync('token', res.data.token)
+      wx.setStorageSync('userType', 2)
+      wx.setStorageSync('workerInfo', res.data)
+      wx.showToast({
+        icon: "success",
+        title: '登陆成功',
+      })
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/shunt/shunt',
+        })
+      }, 1000)
+    })
+  },
+
+  // 获取code
+  getCode() {
+    return new Promise(resolve => {
+      wx.login({
+        success(res) {
+          resolve(res.code)
+        }
+      })
     })
   },
 
@@ -118,7 +178,11 @@ Page({
 
   // 跳转
   to(e) {
-    dump(e)
-  }
+    wx.$dump(e)
+  },
 
+  // 禁止手动滑动
+  catchTouchMove() {
+    return false
+  }
 })

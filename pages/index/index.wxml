@@ -7,43 +7,53 @@
       <view class="img">
         <image src="/images/search.png" mode="aspectFill"></image>
       </view>
-      <input type="text" placeholder="搜索您需要的服务" placeholder-class="placeholder" />
+      <input type="text" placeholder="搜索您需要的服务" placeholder-class="placeholder" value="{{keyword}}" data-name="keyword"
+        bindinput="setState" />
+      <swiper class="btn" current="{{searchBtnShow ? 1 : 0}}">
+        <swiper-item catchtouchmove='catchTouchMove'></swiper-item>
+        <swiper-item class="checkout" catchtouchmove='catchTouchMove'
+        bindtap="to" data-url="/pages/goods/goods?keyword={{keyword}}"
+        >搜索</swiper-item>
+      </swiper>
+
     </view>
 
     <!-- 轮播 -->
     <swiper class="banner" autoplay="true" interval="3000" duration="500">
-      <swiper-item wx:for="{{swiper}}" wx:key="index">
-        <image src="{{item}}" mode="aspectFill"></image>
+      <swiper-item wx:for="{{banner}}" wx:key="index">
+        <image src="{{item.imageUrl}}" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
 
     <!-- 公告 -->
     <view class="notice">
-      <Notice list="{{notice}}"></Notice>
+      <Notice></Notice>
     </view>
 
     <!-- icon -->
     <view class="icon">
-      <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to" data-url="{{item.url}}">
+      <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to"
+        data-url="/pages/goods/goods?businessId={{item.businessHotId}}">
         <view class="img">
-          <image src="{{item.img}}" mode="aspectFill"></image>
+          <image src="{{item.icon}}" mode="aspectFill"></image>
         </view>
-        <view>{{item.title}}</view>
+        <view>{{item.name}}</view>
       </view>
+      <view class="temp" wx:for="{{3}}" wx:key="index"></view>
     </view>
 
     <!-- 标题 -->
     <view class="title">
       <view class="img">
-        <image src="/images/t.png" mode="aspectFill"></image>
+        <image src="/images/index1.png" mode="aspectFill"></image>
       </view>
-      <view class="text">保修服务</view>
+      <view class="text">报修服务</view>
     </view>
 
-    <!-- 保修 -->
+    <!-- 报修 -->
     <view class="repair" bindtap="to" data-url="/pages/repairItem/repairItem">
       <view class="box">
-        <view class="title">保修</view>
+        <view class="title">报修</view>
         <view class="img">
           <image src="/images/right1.png" mode="aspectFill"></image>
         </view>
@@ -54,7 +64,7 @@
     <!-- 标题 -->
     <view class="title">
       <view class="img">
-        <image src="/images/t.png" mode="aspectFill"></image>
+        <image src="/images/index2.png" mode="aspectFill"></image>
       </view>
       <view class="text">服务推荐</view>
       <view class="right">

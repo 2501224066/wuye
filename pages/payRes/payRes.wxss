@@ -1,0 +1,17 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 0;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.text {
+  margin-top: 40rpx;
+  font-weight: 500;
+}

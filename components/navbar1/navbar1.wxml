@@ -1,6 +1,9 @@
 <view class="navbar" style="height:{{navHeight}}px; padding-top:{{navTop}}px;background:{{bgColor}};color:{{color}}">
   <view class="content">
-    <view class="img" bindtap="to">
+    <view wx:if="{{home}}" class="img" bindtap="to" data-url="/pages/shunt/shunt">
+      <image src="/images/home-{{iconColor}}.png" mode="aspectFill"></image>
+    </view>
+    <view wx:else class="img" bindtap="to">
       <image src="/images/left-{{iconColor}}.png" mode="aspectFill"></image>
     </view>
     <view class="title">{{text}}</view>

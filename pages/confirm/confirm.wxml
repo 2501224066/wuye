@@ -3,11 +3,15 @@
 
   <view class="content">
     <!-- 无地址 -->
-    <view class="noAddress shadow">
+    <view class="address shadow" bindtap="to" data-url="/pages/address/address">
       <view class="img">
         <image src="/images/address.png" mode="aspectFill"></image>
       </view>
-      <view class="label">服务地址</view>
+      <view class="label" wx:if="{{ address === null }}">服务地址</view>
+      <view class="label" wx:else>
+        <view>{{ address.contactsName + " " + address.contactsPhone}}</view>
+        <view class="region">{{ address.province + address.city + address.region + address.address }}</view>
+      </view>
       <view class="r">
         <image src="/images/right.png" mode="aspectFill"></image>
       </view>
@@ -25,7 +29,18 @@
           <image src="/images/confirm1.png" mode="aspectFill"></image>
         </view>
         <view class="label">预约时间</view>
-        <view class="ipt"></view>
+        <view class="ipt">
+          <picker mode="date" value="{{serviceStartTime}}" start="{{serviceStartTime}}" bindchange="setState"
+            data-name="serviceStartTime">
+            <view style="text-align: right;margin-right: 30rpx">
+              {{serviceStartTime}}</view>
+          </picker>
+        </view>
+        <view style="margin-right: 10rpx">
+          <picker mode="time" value="{{time}}" start="09:00" end="23:00" bindchange="bindTimeChange">
+            {{time}}
+          </picker>
+        </view>
         <view class="r">
           <image src="/images/right.png" mode="aspectFill"></image>
         </view>
@@ -35,7 +50,11 @@
           <image src="/images/confirm2.png" mode="aspectFill"></image>
         </view>
         <view class="label">优惠信息</view>
-        <view class="ipt"></view>
+        <picker class="ipt" bindchange="couponCheckout" value="{{couponsIndex}}" range="{{coupons}}" range-key="name">
+          <view class="picker" style="text-align: right;margin-right: 30rpx">
+            {{couponsIndex == null ? '请选择' : coupons[couponsIndex].name}}
+          </view>
+        </picker>
         <view class="r">
           <image src="/images/right.png" mode="aspectFill"></image>
         </view>
@@ -47,7 +66,7 @@
       <view class="item">
         <view class="label">备注</view>
         <view class="ipt">
-          <input type="text" placeholder="工具、偏好等要求" />
+          <input type="text" placeholder="工具、偏好等要求" value="{{comments}}" bindinput="setState" data-name="comments" />
         </view>
         <view class="r">
           <image src="/images/right.png" mode="aspectFill"></image>
@@ -78,9 +97,10 @@
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx">
   <view class="fbox">
-    <view class="btn">立即支付</view>
+    <view class="btn" wx:if="{{payData === null}}" bindtap="createOrder">立即支付</view>
+    <view class="btn" wx:else bindtap="pay">立即支付</view>
   </view>
 </view>
-<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>

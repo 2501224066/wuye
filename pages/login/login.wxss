@@ -4,7 +4,7 @@
 }
 
 .box {
-  height: 43vh;
+  height: 50vh;
   border-radius: 16rpx;
   overflow: hidden;
   transform: translateY(0);
@@ -17,6 +17,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.tab>.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
 }
 
 .list>.item {
@@ -63,18 +69,19 @@
 
 .bottom>button {
   background: #fff !important;
-  color: #a8a8a8 !important;
+  color: #4763F4 !important;
   font-weight: 400;
-  border: 2rpx solid #a8a8a8;
+  border: 2rpx solid #4763F4;
 }
 
-.bottom>.agree {
+.agree {
+  margin-top: 40rpx;
   color: #a8a8a8;
   text-align: center;
   font-size: 22rpx;
 }
 
-.bottom>.agree>span {
+.agree>span {
   color: #435FF4;
 }
 

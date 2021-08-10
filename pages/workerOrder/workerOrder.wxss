@@ -6,8 +6,35 @@
   padding: 0 40rpx;
 }
 
-.list {
-  padding: 40rpx 0;
+.tab {
+  display: flex;
+  align-items: center;
+  margin: 50rpx 0 20rpx 0;
+  font-size: 34rpx;
+}
+
+.tab>.item {
+  margin-right: 50rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+.tab>.item>.sel {
+  color: #2b2b2b;
+}
+
+.tab>.item>.line {
+  width: 60rpx;
+  height: 10rpx;
+  margin-top: 14rpx;
+}
+
+.tab>.item>.blue {
+  background: #0054ff;
 }
 
 .list>.item {

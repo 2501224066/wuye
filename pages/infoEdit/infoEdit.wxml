@@ -1,0 +1,41 @@
+<view class="worker">
+  <Navbar1 text="个人资料"></Navbar1>
+
+  <view class="content">
+    <!-- 列表 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">昵称</view>
+        <view class="center">
+          <input type="text" placeholder="请输入您的昵称" placeholder-class="placeholder" value="{{name}}" bindinput="setState"
+            data-name="name" />
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">头像</view>
+        <view class="center">
+          <view class="img" bindtap="upload">
+            <image src="{{image == '' ? '/images/t.png' : image}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="label">性别</view>
+        <view class="center">
+          <label class="radio" bindtap="setSex">
+            <radio value="r1" checked="{{sex == 1}}" />
+            <view>男</view>
+          </label>
+          <label class="radio" bindtap="setSex">
+            <radio value="r2" checked="{{sex == 2}}" />
+            <view>女</view>
+          </label>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn" bindtap="getUserProfile">
+      微信授权
+    </view>
+  </view>
+</view>

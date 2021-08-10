@@ -1,0 +1,23 @@
+<view class="workerIndex">
+  <Navbar bgColor="#4763F4" color="#fff" text="工作台"></Navbar>
+
+  <view class="content">
+    <!-- 公告 -->
+    <view class="notice">
+      <Notice></Notice>
+    </view>
+
+    <!-- icon -->
+    <view class="icon">
+      <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to"
+        data-url="/pages/workerOrder/workerOrder?text={{item.label}}&type={{item.type}}">
+        <view class="img">
+          <image src="{{item.img}}" mode="aspectFill"></image>
+        </view>
+        <view>{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<Tabbar></Tabbar>

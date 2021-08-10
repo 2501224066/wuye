@@ -25,10 +25,10 @@ image {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 160rpx;
   padding: 20rpx 5%;
   box-sizing: border-box;
   background: #fff;
+  z-index: 99;
 }
 
 .footer>.fbox>.btn {

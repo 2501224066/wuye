@@ -13,7 +13,8 @@
     <!-- 订单 -->
     <view class="list">
       <view class="item" wx:for="{{list}}" wx:key="index">
-        <OrderGoods detail="{{item}}" header="true"></OrderGoods>
+        <OrderGoods detail="{{item}}" header="true" bindtap="to"
+          data-url="/pages/orderDetail/orderDetail?id= {{item.orderId}}"></OrderGoods>
       </view>
     </view>
   </view>

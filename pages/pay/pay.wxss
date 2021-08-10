@@ -86,6 +86,7 @@
 .list>.item>.price {
   flex: 1;
   color: #f73131;
+  text-align: right;
 }
 
 .list>.item>.price>span {

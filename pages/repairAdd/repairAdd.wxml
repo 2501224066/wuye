@@ -6,44 +6,43 @@
       <!-- 内容 -->
       <view class="title">内容描述</view>
       <view class="text">
-        <textarea placeholder="请想起描述微信内容" placeholder-class="placeholder"></textarea>
+        <textarea placeholder="请详细描述报修内容" placeholder-class="placeholder" value="{{describe}}" data-name="describe"
+          bindinput="setState"></textarea>
       </view>
       <!--图片 -->
       <view class="title">添加图片/视频</view>
       <view class="imgbox">
         <view class="img">
-          <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx"></image>
+          <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx" bindtap="chooseImage">
+          </image>
         </view>
-        <view class="img" wx:for="{{5}}">
-          <image src="/images/t.png" mode="aspectFill"></image>
+        <view class="img" wx:for="{{image}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
         </view>
-        <view class="temp" wx:for="{{3}}" wx:key="{{index}}"></view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
       </view>
     </view>
 
     <view class="list shadow">
-      <view class="item">
-        <view class="label">服务地址</view>
-        <view class="ipt">
-          <input type="text" placeholder-class="placeholder" />
-        </view>
-      </view>
+      <view class="title">服务地址</view>
       <view class="item">
         <view class="label">姓名</view>
         <view class="ipt">
-          <input type="text" placeholder-class="placeholder" />
+          <input type="text" placeholder-class="placeholder" value="{{name}}" data-name="name" bindinput="setState" />
         </view>
       </view>
       <view class="item">
         <view class="label">电话</view>
         <view class="ipt">
-          <input type="text" placeholder-class="placeholder" />
+          <input type="number" maxlength="11" placeholder-class="placeholder" value="{{phone}}" data-name="phone"
+            bindinput="setState" />
         </view>
       </view>
       <view class="item">
         <view class="label">地址</view>
         <view class="ipt">
-          <input type="text" placeholder-class="placeholder" />
+          <input type="text" placeholder-class="placeholder" value="{{address}}" data-name="address"
+            bindinput="setState" />
         </view>
       </view>
     </view>
@@ -52,9 +51,9 @@
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34: 0}}rpx">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx">
   <view class="fbox">
-    <view class="btn">提交审核</view>
+    <view class="btn" bindtap="create">提交审核</view>
   </view>
 </view>
-<view style="padding-bottom:{{iphoneFooter ? 34 : 0}}rpx;"></view>
+<view style="box-sizing:border-box; padding-bottom:{{iphoneFooter ? 34 + 20 : 20}}rpx;"></view>
