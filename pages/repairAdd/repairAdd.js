@@ -15,6 +15,8 @@ Page({
     address: "",
     describe: "",
     image: [],
+    serviceStartTime: new Date().toISOString().substring(0, 10),
+    time: new Date().toTimeString().substring(0, 5),
   },
 
   onLoad(options) {
@@ -26,6 +28,14 @@ Page({
   onShow() {
     this.setData({
       iphoneFooter: getApp().globalData.iphoneFooter,
+    })
+  },
+
+  // 删除图片
+  del(e) {
+    this.data.image.splice(this.data.image.indexOf(e.currentTarget.dataset.media), 1)
+    this.setData({
+      image: this.data.image
     })
   },
 
@@ -70,7 +80,7 @@ Page({
       name: this.data.name,
       phone: this.data.phone,
       address: this.data.address,
-      describe: this.data.describe,
+      described: this.data.describe,
       image: this.data.image.join(),
       type: this.data.title
     }).then(res => {
@@ -84,6 +94,11 @@ Page({
     })
   },
 
+  // 图片预览
+  mediaShow(e) {
+    wx.$showMedia(e.currentTarget.dataset.url)
+  },
+
   // 修改状态
   setState(e) {
     this.setData({
@@ -95,12 +110,17 @@ Page({
   // 选择图片
   chooseImage() {
     let that = this
-    wx.chooseImage({
+    wx.chooseMedia({
+      count: 9,
+      mediaType: ['image', 'video'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
       success(res) {
-        res.tempFilePaths.forEach(element => {
+        res.tempFiles.forEach(element => {
           wx.uploadFile({
             url: BASE_URL + '/common/upload',
-            filePath: element,
+            filePath: element.tempFilePath,
             header: {
               'Authorization': wx.getStorageSync('token') || '',
             },

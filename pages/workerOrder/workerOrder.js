@@ -27,6 +27,10 @@ Page({
     this.getData()
   },
 
+  onShow() {
+    this.getData()
+  },
+
   // 获取数据
   getData(addStatus = false) {
     if (this.data.type == 1) {

@@ -1,5 +1,5 @@
 <view class="coupon">
-  <Navbar1 text="联系客服"></Navbar1>
+  <Navbar1 text="优惠券"></Navbar1>
 
   <view class="content">
     <!-- tab -->
@@ -24,6 +24,7 @@
         <view class="label">赠送</view>
         <view class="info">
           <view class="title">{{item.name}}</view>
+          <view class="price">{{item.price}} 元</view>
           <view class="memo">·有效期：{{item.endTime}}</view>
         </view>
       </view>

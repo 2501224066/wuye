@@ -1,40 +1,46 @@
 import {
-  payList
+  payList,
+  repairBanner
 } from "../../config/api.js"
 
 Page({
   data: {
     iphoneFooter: false,
     tabIndex: 0,
-    tab: [
-      '待缴记录',
-      '缴费记录'
-    ],
+    tab: {
+      0: '待缴记录',
+      1: '缴费记录'
+    },
     list: [],
     page: 1,
-    pageSize: 10
-  },
-
-  onLoad() {
-    this.getPayList()
+    pageSize: 10,
+    banner: ''
   },
 
   onShow() {
     wx.$verifyLogin()
+    this.getPayList()
+    this.getBanner()
+  },
+
+  // 获取 banner
+  getBanner() {
+    repairBanner().then(res => {
+      this.setData({
+        banner: res.data.roomPayImage
+      })
+    })
   },
 
   // 缴费列表
   getPayList(addStatus = false) {
-    return new Promise(resolve => {
-      payList({
-        page: this.data.page,
-        pageSize: this.data.pageSize,
-        type: this.data.tabIndex == 0 ? 0 : 1 // 0:未缴 1:已缴
-      }).then(res => {
-        this.setData({
-          list: addStatus ? this.data.list.concat(res.data) : res.data
-        })
-        resolve()
+    payList({
+      page: this.data.page,
+      pageSize: this.data.pageSize,
+      type: this.data.tabIndex
+    }).then(res => {
+      this.setData({
+        list: addStatus ? this.data.list.concat(res.data) : res.data
       })
     })
   },
@@ -42,13 +48,11 @@ Page({
   // 切换Tab
   checkoutTab(e) {
     this.setData({
-      page: 1
+      page: 1,
+      tabIndex: e.currentTarget.dataset.index,
+      list: [],
     })
-    this.getPayList().then(res => {
-      this.setData({
-        tabIndex: e.currentTarget.dataset.index
-      })
-    })
+    this.getPayList()
   },
 
   // 跳转

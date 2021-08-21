@@ -11,16 +11,16 @@
         bindinput="setState" />
       <swiper class="btn" current="{{searchBtnShow ? 1 : 0}}">
         <swiper-item catchtouchmove='catchTouchMove'></swiper-item>
-        <swiper-item class="checkout" catchtouchmove='catchTouchMove'
-        bindtap="to" data-url="/pages/goods/goods?keyword={{keyword}}"
-        >搜索</swiper-item>
+        <swiper-item class="checkout" catchtouchmove='catchTouchMove' bindtap="to"
+          data-url="/pages/goods/goods?keyword={{keyword}}">搜索</swiper-item>
       </swiper>
 
     </view>
 
     <!-- 轮播 -->
     <swiper class="banner" autoplay="true" interval="3000" duration="500">
-      <swiper-item wx:for="{{banner}}" wx:key="index">
+      <swiper-item wx:for="{{banner}}" wx:key="index" bindtap="bannerTo" data-url='{{item.redirectUrl}}'
+        data-type="{{item.redirectType}}">
         <image src="{{item.imageUrl}}" mode="aspectFill"></image>
       </swiper-item>
     </swiper>
@@ -33,7 +33,7 @@
     <!-- icon -->
     <view class="icon">
       <view class="item" wx:for="{{icon}}" wx:key="index" bindtap="to"
-        data-url="/pages/goods/goods?businessId={{item.businessHotId}}">
+        data-url="/pages/goods/goods?businessId={{item.businessId}}">
         <view class="img">
           <image src="{{item.icon}}" mode="aspectFill"></image>
         </view>

@@ -37,7 +37,7 @@
           </picker>
         </view>
         <view style="margin-right: 10rpx">
-          <picker mode="time" value="{{time}}" start="09:00" end="23:00" bindchange="bindTimeChange">
+          <picker mode="time" value="{{time}}" start="09:00" end="23:00" bindchange="setState" data-name="time">
             {{time}}
           </picker>
         </view>
@@ -45,14 +45,14 @@
           <image src="/images/right.png" mode="aspectFill"></image>
         </view>
       </view>
-      <view class="item">
+      <view class="item" wx:if="{{coupons.length > 0}}">
         <view class="img">
           <image src="/images/confirm2.png" mode="aspectFill"></image>
         </view>
         <view class="label">优惠信息</view>
         <picker class="ipt" bindchange="couponCheckout" value="{{couponsIndex}}" range="{{coupons}}" range-key="name">
           <view class="picker" style="text-align: right;margin-right: 30rpx">
-            {{couponsIndex == null ? '请选择' : coupons[couponsIndex].name}}
+            {{couponsIndex == null ? '请选择' : coupons[couponsIndex].name + "【-" + coupons[couponsIndex].price + "元】"}}
           </view>
         </picker>
         <view class="r">
@@ -89,6 +89,16 @@
         <view class="ipt"></view>
         <view class="checkout">
           <image src="/images/checkout.png" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 价格 -->
+    <view class="list shadow">
+      <view class="item">
+        <view class="label">支付金额</view>
+        <view class="ipt" style="text-align: right;color: red;">
+          {{goods.totalPay - (couponsIndex != null? coupons[couponsIndex].price : 0) }} 元
         </view>
       </view>
     </view>

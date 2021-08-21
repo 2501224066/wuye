@@ -37,8 +37,13 @@ Page({
   getRecommend() {
     recommend({
       page: 1,
-      pageSize: 10
+      pageSize: 100
     }).then(res => {
+      res.data.records.map(value => {
+        value.unitPrice = value.univalence
+        value.coverImage = value.icon
+        return value
+      })
       this.setData({
         recommend: res.data.records
       })
@@ -61,6 +66,21 @@ Page({
         icon: res.data
       })
     })
+  },
+
+  // banner跳转
+  bannerTo(e) {
+    switch (+e.currentTarget.dataset.type) {
+      case 1:
+        wx.navigateTo({
+          url: '/pages/goodsDetail/goodsDetail?packageBusinessId=' + e.currentTarget.dataset.url,
+        })
+      case 2:
+        wx.navigateTo({
+          url: '/pages/webView/webView?' + e.currentTarget.dataset.url,
+        })
+      default:
+    }
   },
 
   // 跳转

@@ -5,13 +5,12 @@ import {
 Page({
   data: {
     tab: {
-      0: "待支付",
       1: "待服务",
       2: "服务中",
       3: "待验收",
       4: "已完成"
     },
-    tabIndex: 0,
+    tabIndex: 1,
     list: [],
     page: 1,
     pageSize: 10
@@ -32,6 +31,9 @@ Page({
       page: this.data.page,
       pageSize: this.data.pageSize
     }).then(res => {
+      res.data.records.map(value => {
+        return value.coverImage = [value.coverImage]
+      })
       this.setData({
         list: addStatus ? this.data.list.concat(res.data.records) : res.data.records
       })

@@ -25,7 +25,8 @@
     "pages/workerOrderDetail2/workerOrderDetail2",
     "pages/workbench/workbench",
     "pages/payRes/payRes",
-    "pages/text/text"
+    "pages/text/text",
+    "pages/webView/webView"
   ],
   "window": {
     "navigationStyle": "custom",

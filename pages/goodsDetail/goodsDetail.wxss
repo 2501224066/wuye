@@ -48,11 +48,6 @@
   color: #a8a8a8;
 }
 
-.info>.box>.top>.img {
-  width: 50rpx;
-  height: 50rpx;
-}
-
 .info>.box>.title {
   font-size: 35rpx;
 }

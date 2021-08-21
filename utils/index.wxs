@@ -1,0 +1,14 @@
+// 是否为图片格式
+var isImg = function (url) {
+  return ['png', 'jpg', 'jpeg', 'gif', 'webp'].indexOf(url.substring(url.lastIndexOf(".") + 1)) > -1
+}
+
+// 是否为空对象
+var isNullObj = function (params) {
+  return JSON.stringify(params) == '{}'
+}
+
+module.exports = {
+  isImg: isImg,
+  isNullObj: isNullObj
+}

@@ -40,60 +40,98 @@ Page({
         icon: 'success',
         title: '操作成功',
       })
-      this.onLoad()
+      this.getDetail()
     })
+  },
+
+  // 验证内容
+  verify() {
+    if (this.data.imgArr.length === 0) {
+      wx.showToast({
+        icon: 'loading',
+        title: '请上传图片',
+      })
+      return false
+    }
+    if (this.data.memo === '') {
+      wx.showToast({
+        icon: 'loading',
+        title: '请描述服务内容',
+      })
+      return false
+    }
+    return true
   },
 
   // 服务前内容
   before() {
+    if (!this.verify()) {
+      return
+    }
     workerServerOrderBeforePost({
       orderId: this.data.id,
-      context: {
+      context: JSON.stringify({
         image: this.data.imgArr.join(),
         text: this.data.memo
-      }
+      })
     }).then(res => {
       wx.showToast({
         icon: 'success',
         title: '操作成功',
       })
-      this.onLoad()
+      this.getDetail()
+    })
+  },
+
+  // 删除图片
+  del(e) {
+    this.data.imgArr.splice(this.data.imgArr.indexOf(e.currentTarget.dataset.media), 1)
+    this.setData({
+      imgArr: this.data.imgArr
     })
   },
 
   // 服务后内容
-  before() {
+  after() {
+    if (!this.verify()) {
+      return
+    }
     workerServerOrderAfterPost({
       orderId: this.data.id,
-      context: {
+      context: JSON.stringify({
         image: this.data.imgArr.join(),
         text: this.data.memo
-      }
+      })
     }).then(res => {
       wx.showToast({
         icon: 'success',
         title: '操作成功',
       })
-      this.onLoad()
+      this.getDetail()
     })
   },
 
   // 上传
   upload() {
     let that = this
-    wx.chooseImage({
+    wx.chooseMedia({
+      count: 9,
+      mediaType: ['image', 'video'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
       success(res) {
-        res.tempFilePaths.forEach(element => {
+        res.tempFiles.forEach(element => {
           wx.uploadFile({
             url: BASE_URL + '/common/upload',
-            filePath: element,
+            filePath: element.tempFilePath,
             header: {
               'Authorization': wx.getStorageSync('token') || '',
             },
             name: 'file',
             success(res) {
               that.setData({
-                imgArr: JSON.parse(res.data).data
+                imgArr: that.data.imgArr.concat(JSON.parse(res.data).data)
               })
             }
           })
@@ -104,6 +142,10 @@ Page({
 
   // 获取详情
   getDetail() {
+    this.setData({
+      memo: '',
+      imgArr: []
+    })
     workerServerOrderDetail({
       orderId: this.data.id
     }).then(res => {
@@ -111,6 +153,11 @@ Page({
         detail: res.data
       })
     })
+  },
+
+  // 图片预览
+  mediaShow(e) {
+    wx.$showMedia(e.currentTarget.dataset.url)
   },
 
   // 修改状态

@@ -1,3 +1,6 @@
+<!-- 工具 -->
+<wxs src="../../utils/index.wxs" module="util"></wxs>
+
 <view class="workerOrderDetail">
   <Navbar1 bgColor="#4763F4" iconColor="white" color="#fff" center="{{status[detail.status]}}"></Navbar1>
 
@@ -13,6 +16,10 @@
       <view class="item">
         <view class="label">责任类型</view>
         <view class="center">{{duty[detail.result]}}</view>
+      </view>
+      <view class="item" wx:if="{{detail.status > 2}}">
+        <view class="label">保修金额</view>
+        <view class="center">{{detail.money}}</view>
       </view>
       <view class="item">
         <view class="label">报修类型</view>
@@ -37,38 +44,79 @@
       <view class="title">报修内容</view>
       <view class="memo">{{detail.described}}</view>
       <view class="photo">
-        <view class="img" wx:for="{{detail.image}}">
-          <image src="{{item}}" mode="aspectFill"></image>
+        <view class="img" wx:for="{{detail.image}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill" bindtap="mediaShow" data-url="{{item}}">
+          </image>
         </view>
         <view class="temp" wx:for="{{3}}" wx:key="index"></view>
       </view>
     </view>
 
+    <!-- 报修前数据 -->
+    <view class="list shadow" wx:if="{{!util.isNullObj(detail.beforeService) }}">
+      <view class="title">报修前记录</view>
+      <view class="imgbox">
+        <view class="img" wx:for="{{detail.beforeService.image}}" wx:key="index">
+          <image wx:if="{{ util.isImg(item) }}" src="{{item}}" mode="aspectFill" bindtap="mediaShow"
+            data-url="{{item}}"></image>
+          <video wx:else src="{{item}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"
+            bindtap="mediaShow" data-url="{{item}}"></video>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
+      </view>
+      <view class="text">
+        {{detail.beforeService.text}}
+      </view>
+    </view>
+
+    <!-- 报修后数据 -->
+    <view class="list shadow" wx:if="{{ !util.isNullObj(detail.afterService) }}">
+      <view class="title">报修后记录</view>
+      <view class="imgbox">
+        <view class="img" wx:for="{{detail.afterService.image}}" wx:key="index">
+          <image wx:if="{{ util.isImg(item) }}" src="{{item}}" mode="aspectFill" bindtap="mediaShow"
+            data-url="{{item}}"></image>
+          <video wx:else src="{{item}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"
+            bindtap="mediaShow" data-url="{{item}}"></video>
+        </view>
+        <view class="temp" wx:for="{{3}}" wx:key="index"></view>
+      </view>
+      <view class="text">
+        {{detail.afterService.text}}
+      </view>
+    </view>
+
     <!-- 处理 -->
-    <view class="list shadow" wx:if="{{detail.status == 2 || detail.status == 3}}">
-      <view class="title">报修处理</view>
+    <view class="list shadow"
+      wx:if="{{detail.status != 1  && (util.isNullObj(detail.beforeService) || util.isNullObj(detail.afterService))}}">
+      <view class="title">报修记录</view>
       <!-- 上传图片 -->
       <view class="imgbox">
         <view class="img" bindtap="upload">
           <image src="/images/camera.png" mode="aspectFill" style="width: 80rpx;height: 80rpx"></image>
         </view>
         <view class="img" wx:for="{{imgArr}}" wx:key="index">
-          <image src="{{item}}" mode="aspectFill"></image>
+          <image wx:if="{{ util.isImg(item) }}" src="{{item}}" mode="aspectFill" bindtap="mediaShow"
+            data-url="{{item}}"></image>
+          <video wx:else src="{{item}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"
+            bindtap="mediaShow" data-url="{{item}}"></video>
+          <view class="del" bindtap="del" data-media="{{item}}">x</view>
         </view>
         <view class="temp" wx:for="{{3}}" wx:key="index"></view>
       </view>
       <view class="text">
-        <textarea placeholder="服务结果描述" placeholder-class="placeholder"></textarea>
+        <textarea placeholder="服务结果描述" placeholder-class="placeholder" value="{{memo}}" bindinput="setState"
+          data-name="memo"></textarea>
       </view>
-      <view class="item">
+      <view class="item" wx:if="{{detail.status == 2 && detail.result == 2}}">
         <view class="label">报修金额</view>
         <view class="center">
-          <input type="number" disabled="{{detail.result==1 ? true : false}}" value="{{money}}" bindtap="setState"
+          <input type="number" disabled="{{detail.result==1 ? true : false}}" value="{{money}}" bindinput="setState"
             data-name="money" />
         </view>
         <view>元</view>
       </view>
-      <view class="item">
+      <view class="item" wx:if="{{detail.status == 3}}">
         <view class="label">提示</view>
         <view class="center">用户支付报修金额后订单进入已完成状态</view>
       </view>

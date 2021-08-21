@@ -76,6 +76,12 @@
   font-weight: bold;
 }
 
+.list>.item>.info>.price {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: red;
+}
+
 .list>.item>.info>.memo {
   margin-top: 20rpx;
   font-size: 24rpx;

@@ -2,6 +2,7 @@
   <Navbar1 text="{{title}}"></Navbar1>
 
   <view class="content">
-    <text>{{text}}</text>
+    <text>{{content}}</text>
+    <rich-text nodes="{{text}}"></rich-text>
   </view>
 </view>

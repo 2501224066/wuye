@@ -90,25 +90,29 @@ Page({
   // 上传
   upload() {
     let that = this
-    wx.chooseImage({
+    wx.chooseMedia({
+      count: 9,
+      mediaType: ['image', 'video'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
       success(res) {
-        res.tempFilePaths.forEach(element => {
+        res.tempFiles.forEach(element => {
           wx.uploadFile({
             url: BASE_URL + '/common/upload',
-            filePath: element,
+            filePath: element.tempFilePath,
             header: {
               'Authorization': wx.getStorageSync('token') || '',
             },
             name: 'file',
             success(res) {
               that.setData({
-                image: JSON.parse(res.data).data
+                imgArr: that.data.imgArr.concat(JSON.parse(res.data).data)
               })
-              this.update()
             }
           })
         });
       }
     })
-  }
+  },
 })

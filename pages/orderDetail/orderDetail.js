@@ -38,6 +38,7 @@ Page({
     this.getDetail()
   },
 
+  // 订单详情
   getDetail() {
     orderDetail({
       orderId: this.data.id
@@ -45,11 +46,11 @@ Page({
       this.setData({
         detail: res.data,
         goods: {
-          coverImage: res.data.coverImage,
+          coverImage: [res.data.coverImage],
           name: res.data.name,
           totalPay: res.data.totalPay
         }
       })
     })
-  }
+  },
 })

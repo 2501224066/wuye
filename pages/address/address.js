@@ -1,6 +1,7 @@
 import {
   addressList,
-  delAddress
+  delAddress,
+  setDefaultAddress
 } from "../../config/api"
 
 Page({
@@ -16,6 +17,21 @@ Page({
       iphoneFooter: getApp().globalData.iphoneFooter,
     })
     this.getAddressList()
+  },
+
+  // 设为默认
+  setDefault(e) {
+    setDefaultAddress({
+      addressId: e.currentTarget.dataset.id
+    }).then(res => {
+      wx.showToast({
+        icon: "success",
+        title: '设置默认成功',
+      })
+      setTimeout(() => {
+        wx.navigateBack()
+      }, 1000)
+    })
   },
 
   // 获取地址

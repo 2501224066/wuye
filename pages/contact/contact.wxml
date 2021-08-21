@@ -10,13 +10,13 @@
     <view class="phone shadow">
       <view>联系管家：{{detail.serviceTel}}</view>
       <view class="img">
-        <image src="{{detail.serviceCode == '' ? '/images/phone.png' : detail.serviceCode}}" mode="aspectFill"></image>
+        <image src="/images/phone.png" mode="aspectFill"></image>
       </view>
     </view>
 
     <view class="box shadow">
       <view class="qr">
-        <image src="/images/t.png" mode="widthFix"></image>
+        <image src="{{detail.serviceCode == '' ? '/images/phone.png' : detail.serviceCode}}" mode="widthFix"></image>
       </view>
       <view>扫码关注，获取更多资讯</view>
     </view>

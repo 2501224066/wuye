@@ -24,6 +24,7 @@ Page({
   },
 
   onLoad(options) {
+    wx.$verifyLogin()
     this.setData({
       iphoneFooter: getApp().globalData.iphoneFooter,
       id: options.id,

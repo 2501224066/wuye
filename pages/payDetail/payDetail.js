@@ -1,5 +1,6 @@
 import {
-  payDetail
+  payDetail,
+  payPay
 } from "../../config/api"
 
 Page({
@@ -31,18 +32,30 @@ Page({
   },
 
   // 支付
-  pay() {
+  async pay() {
+    let vxPayData = await payPay({
+      roomPayCostId: this.data.id
+    }).then(res => {
+      return new Promise(resolve => {
+        resolve(res.data.vxPayData)
+      })
+    })
+    let that = this
     wx.requestPayment({
-      nonceStr: this.data.detail.vxPayData.nonceStr,
-      package: this.data.detail.vxPayData.package,
-      paySign: this.data.detail.vxPayData.sign,
-      timeStamp: this.data.detail.vxPayData.timeStamp.toString(),
-      signType: this.data.detail.vxPayData.signType,
+      nonceStr: vxPayData.nonceStr,
+      package: vxPayData.package,
+      paySign: vxPayData.sign,
+      timeStamp: vxPayData.timeStamp.toString(),
+      signType: vxPayData.signType,
       success(res) {
         if (res.errMsg == "requestPayment:ok") {
-          wx.redirectTo({
-            url: "/pages/payRes/payRes"
+          wx.showToast({
+            icon: 'success',
+            title: '支付完成',
           })
+          setTimeout(() => {
+            that.getDetail()
+          }, 1000)
         }
       },
       fail(res) {

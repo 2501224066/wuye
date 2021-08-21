@@ -49,7 +49,7 @@ export function recommend(data, repair = '') {
 export function icon(data, repair = '') {
   return common.go({
     method: 'post',
-    url: '/index/business' + repair,
+    url: '/business/type' + repair,
     data: data
   })
 }
@@ -347,6 +347,51 @@ export function workerServerOrderAfterPost(data, repair = '') {
   return common.go({
     method: 'post',
     url: '/workers/unitOrderAfter' + repair,
+    data: data
+  })
+}
+
+// 设为默认地址
+export function setDefaultAddress(data, repair = '') {
+  return common.go({
+    method: 'post',
+    url: '/user-address/setDefault' + repair,
+    data: data
+  })
+}
+
+// 缴费支付
+export function payPay(data, repair = '') {
+  return common.go({
+    method: 'post',
+    url: '/room-pay-cost/pay' + repair,
+    data: data
+  })
+}
+
+// 我的报修
+export function myRepair(data, repair = '') {
+  return common.go({
+    method: 'post',
+    url: '/maintenance-order/pageList' + repair,
+    data: data
+  })
+}
+
+// 报修缴费
+export function repairPay(data, repair = '') {
+  return common.go({
+    method: 'post',
+    url: '/maintenance-order/pay' + repair,
+    data: data
+  })
+}
+
+// 缴费图
+export function repairBanner(data, repair = '') {
+  return common.go({
+    method: 'post',
+    url: '/system-config/getRoomPayImage' + repair,
     data: data
   })
 }

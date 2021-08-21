@@ -3,8 +3,8 @@
 
   <!-- 列表 -->
   <view class="list">
-    <view class="item shadow" wx:for="{{list}}" wx:key="index" bindlongtap="del" data-id="{{item.addressId}}"
-      data-index="{{index}}">
+    <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="setDefault" bindlongtap="del"
+      data-id="{{item.addressId}}" data-index="{{index}}">
       <view class="detail">
         <view class="man">
           <view>{{item.contactsName}}</view>
@@ -12,7 +12,7 @@
         </view>
         <view class="where">{{item.address}}</view>
       </view>
-      <view class="img" bindtap="toEdit" data-index="{{index}}">
+      <view class="img" catchtap="toEdit" data-index="{{index}}">
         <image src="/images/right.png"></image>
       </view>
     </view>

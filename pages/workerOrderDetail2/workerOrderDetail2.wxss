@@ -91,6 +91,20 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+}
+
+.list>.imgbox>.img>.del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35rpx;
+  height: 35rpx;
+  background: #000;
+  border-radius: 0 0 0 10rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 35rpx;
 }
 
 .list>.imgbox>.temp {

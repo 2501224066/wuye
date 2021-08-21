@@ -1,51 +1,54 @@
+import {
+  myRepair
+} from "../../config/api"
+
 Page({
   data: {
+    tabIndex: 0,
     status: {
-      1: '审核中',
-      2: '待服务',
-      3: '已完成'
+      0: '待审核',
+      1: '待服务',
+      2: '服务中',
+      3: '待验收',
+      4: '已完成'
     },
-    type: {
-      1: {
-        img: '/images/repair1.png',
-        title: '门窗维修'
-      },
-      2: {
-        img: '/images/repair2.png',
-        title: '家电维修'
-      },
-      3: {
-        img: '/images/repair3.png',
-        title: '门锁维修'
-      },
-      4: {
-        img: '/images/repair4.png',
-        title: '水管维修'
-      },
-      5: {
-        img: '/images/repair5.png',
-        title: '地板维修'
-      }
-    },
-    list: [{
-      time: "2021-05-12 22:02",
-      type: 1,
-      status: 1,
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }, {
-      time: "2021-05-12 22:02",
-      type: 2,
-      status: 2,
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }, {
-      time: "2021-05-12 22:02",
-      type: 2,
-      status: 3,
-      memo: "深度清洁+专业消毒倒计3小时保洁",
-      price: "288.00"
-    }]
+    list: [],
+    page: 1,
+    pageSize: 10
+  },
+
+  onLoad() {
+    this.getList()
+  },
+
+  // 切换Tab
+  checkoutTab(e) {
+    this.setData({
+      page: 1,
+      tabIndex: e.currentTarget.dataset.index
+    })
+    this.getList()
+  },
+
+  // 获取列表
+  getList(addStatus) {
+    myRepair({
+      status: this.data.tabIndex,
+      page: this.data.page,
+      pageSize: this.data.pageSize
+    }).then(res => {
+      this.setData({
+        list: addStatus ? this.data.list.concat(res.data.records) : res.data.records
+      })
+    })
+  },
+
+  // 触底
+  onReachBottom() {
+    this.setData({
+      page: this.data.page + 1
+    })
+    this.getList(true)
   },
 
   // 跳转

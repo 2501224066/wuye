@@ -38,7 +38,7 @@
 </view>
 
 <!-- 底部 -->
-<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx" wx:if="{{item.type == 1}}">
+<view class="footer shadow" style="padding-bottom:{{iphoneFooter ? 34 + 20 :  20}}rpx" wx:if="{{detail.isPay == 0}}">
   <view class="fbox">
     <view class="btn" bindtap="pay">立即支付</view>
   </view>

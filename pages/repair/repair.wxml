@@ -2,22 +2,31 @@
   <Navbar1 text="我的报修"></Navbar1>
 
   <view class="content">
+    <!-- tab -->
+    <view class="tab">
+      <view class="item" wx:for="{{status}}" wx:key="index" bindtap="checkoutTab" data-index="{{index}}">
+        <view class="{{tabIndex == index ? 'sel' : ''}}">{{item}}</view>
+        <view class="line {{tabIndex == index ? 'blue' : ''}}"></view>
+      </view>
+    </view>
+
     <!-- 列表 -->
     <view class="list">
-      <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="to" data-url="/pages/repairDetail/repairDetail">
+      <view class="item shadow" wx:for="{{list}}" wx:key="index" bindtap="to"
+        data-url="/pages/repairDetail/repairDetail?id={{item.maintenanceOrderId}}">
         <view class="top">
-          <view class="time">{{item.time}}</view>
+          <view class="time">{{item.creatTime}}</view>
           <view class="type type{{item.status}}">{{status[item.status]}}</view>
         </view>
         <view class="info">
           <view class="title">
             <view class="img">
-              <image src="{{type[item.type].img}}" mode="aspectFill"></image>
+              <image src="{{item.icon}}" mode="aspectFill"></image>
             </view>
-            <view class="label">{{type[item.type].title}}</view>
-            <view class="price"><span>¥</span>{{item.price}}</view>
+            <view class="label">{{item.type}}</view>
+            <view class="price"><span>¥</span>{{item.money}}</view>
           </view>
-          <view class="memo">{{item.memo}}</view>
+          <view class="memo">{{item.described}}</view>
         </view>
       </view>
     </view>

@@ -17,9 +17,6 @@
           <view class="unit">¥</view>
           <view class="price">{{sku[0].money}}</view>
           <view class="line">¥ {{sku[0].money}}</view>
-          <view class="img">
-            <image src="/images/share.png" mode="aspectFill"></image>
-          </view>
         </view>
         <view class="title">{{detail.name}}</view>
         <view class="memo">{{detail.entInstruction}}</view>
@@ -55,7 +52,7 @@
     </view>
     <view class="goods">
       <view class="img">
-        <image src="{{detail.coverImage}}" mode="aspectFill"></image>
+        <image src="{{detail.coverImage[0]}}" mode="aspectFill"></image>
       </view>
       <view class="r">
         <view class="price" wx:if="{{skuIndex != null}}"><span>¥</span>{{sku[skuIndex].money}}</view>
