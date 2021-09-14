@@ -22,7 +22,7 @@
         <view class="text" wx:else>{{detail.useOf}}吨</view>
       </view>
       <view class="item">
-        <view class="label">住地信息</view>
+        <view class="label">缴费地址</view>
         <view class="text">{{detail.roomNo}}</view>
       </view>
       <view class="item">

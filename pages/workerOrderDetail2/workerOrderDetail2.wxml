@@ -18,7 +18,7 @@
         <view class="center">{{duty[detail.result]}}</view>
       </view>
       <view class="item" wx:if="{{detail.status > 2}}">
-        <view class="label">保修金额</view>
+        <view class="label">报修金额</view>
         <view class="center">{{detail.money}}</view>
       </view>
       <view class="item">
@@ -26,7 +26,7 @@
         <view class="center">{{detail.type}}</view>
       </view>
       <view class="item">
-        <view class="label">报修小区</view>
+        <view class="label">报修地址</view>
         <view class="center">{{detail.address}}</view>
       </view>
       <view class="item">
@@ -36,6 +36,10 @@
       <view class="item">
         <view class="label">手机号</view>
         <view class="center">{{detail.phone}}</view>
+      </view>
+      <view class="item">
+        <view class="label">预约时间</view>
+        <view class="center">{{detail.appointmentTime}}</view>
       </view>
     </view>
 
@@ -116,7 +120,7 @@
         </view>
         <view>元</view>
       </view>
-      <view class="item" wx:if="{{detail.status == 3}}">
+      <view class="item" wx:if="{{detail.result == 2 && detail.status == 3}}">
         <view class="label">提示</view>
         <view class="center">用户支付报修金额后订单进入已完成状态</view>
       </view>

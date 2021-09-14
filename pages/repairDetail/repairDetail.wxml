@@ -62,6 +62,10 @@
         <view class="label">下单时间</view>
         <view class="text">{{detail.creatTime}}</view>
       </view>
+      <view class="item">
+        <view class="label">预约时间</view>
+        <view class="text">{{detail.appointmentTime}}</view>
+      </view>
     </view>
 
   </view>

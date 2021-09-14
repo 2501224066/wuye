@@ -85,9 +85,10 @@ Page({
 
   // 删除图片
   del(e) {
-    this.data.imgArr.splice(this.data.imgArr.indexOf(e.currentTarget.dataset.media), 1)
     this.setData({
-      imgArr: this.data.imgArr
+      imgArr: this.data.imgArr.filter(item => {
+        return item != e.currentTarget.dataset.media
+      })
     })
   },
 

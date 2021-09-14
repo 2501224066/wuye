@@ -33,9 +33,10 @@ Page({
 
   // 删除图片
   del(e) {
-    this.data.image.splice(this.data.image.indexOf(e.currentTarget.dataset.media), 1)
     this.setData({
-      image: this.data.image
+      image: this.data.image.filter(item => {
+        return item != e.currentTarget.dataset.media
+      })
     })
   },
 
@@ -82,7 +83,8 @@ Page({
       address: this.data.address,
       described: this.data.describe,
       image: this.data.image.join(),
-      type: this.data.title
+      type: this.data.title,
+      appointmentTime: this.data.serviceStartTime + ' ' + this.data.time + ':00',
     }).then(res => {
       wx.showToast({
         title: '创建成功',
